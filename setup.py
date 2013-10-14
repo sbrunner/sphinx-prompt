@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 import os
-import sys
 
 from setuptools import setup, find_packages
 
@@ -12,6 +11,7 @@ README = (
 
 install_requires = [
     'Sphinx',
+    'pygments',
 ]
 setup_requires = [
 ]
@@ -22,7 +22,7 @@ setup(
     name='sphinx-prompt',
     version='0.2',
     description="""
-Sphinx directive to add unselectable prompt 
+Sphinx directive to add unselectable prompt
 """,
     long_description=README,
     classifiers=[
