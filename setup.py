@@ -20,7 +20,7 @@ tests_require = [
 
 setup(
     name='sphinx-prompt',
-    version='0.1',
+    version='0.2',
     description="""
 Sphinx directive to add unselectable prompt 
 """,
