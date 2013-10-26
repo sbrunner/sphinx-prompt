@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Sphinx-prompt : Sphinx directive to add unselectable prompt" />
+    <meta name="description" content="Sphinx-prompt : Sphinx directive to add unselectable prompt - Examples" />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
 
@@ -20,177 +20,108 @@
 
           <h1 id="project_title">Sphinx-prompt</h1>
           <h2 id="project_tagline">Sphinx directive to add unselectable prompt</h2>
-
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/sbrunner/sphinx-prompt/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/sbrunner/sphinx-prompt/tarball/master">Download this project as a tar.gz file</a>
-            </section>
         </header>
     </div>
 
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h1>
-<a name="sphinx-prompt" class="anchor" href="#sphinx-prompt"><span class="octicon octicon-link"></span></a>Sphinx Prompt</h1>
+        <h1>Examples</h1>
 
-<p>.. contents:: Table of contents</p>
-
-<h2>
-<a name="inititlise" class="anchor" href="#inititlise"><span class="octicon octicon-link"></span></a>Inititlise</h2>
-
-<p>In <code>conf.py</code> add <code>extensions += ['sphinx-prompt']</code>.</p>
-
-<h2>
-<a name="syntax" class="anchor" href="#syntax"><span class="octicon octicon-link"></span></a>Syntax</h2>
-
-<p>.. code::</p>
-
-<pre><code>.. prompt:: [&lt;language&gt; [&lt;prompts&gt; [&lt;modifier&gt;]]]
-
-   &lt;statements&gt;
-</code></pre>
-
-<p>Language</p>
-
-<pre><code>
-Supported language:
-
-- ``text`` (no pigments, default)
-- ``bash``
-- ``python``
-- ``scala``
-
-Prompt(s)
-</code></pre>
-
-<p>If modifier is auto, a coma separated list of prompts to find in the statements.</p>
-
-<p>Else the prompt to add on each statements, for Python and Bash language the end
-<code>\</code> is supported.</p>
-
-<p>Default to <code>$,#,&gt;&gt;&gt;</code>.</p>
-
-<h2>
-<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
-
-<p>.. code::</p>
-
-<pre><code>.. prompt:: bash $ noauto
+        <pre>
+.. prompt:: bash
 
     cd &lt;folder&gt;
     cp &lt;src&gt; \
         &lt;dst&gt;
     cd -
-</code></pre>
-
-<p>=&gt;</p>
-
-<p>.. code:: html</p>
-
-<pre><code>&lt;pre&gt;
-&lt;style type="text/css" scoped&gt;
-span:before {
+        </pre>
+        =>
+<pre>
+<style type="text/css" scoped>
+    span:before {
     content: "$ ";
 }
-&lt;/style&gt;
-&lt;span&gt;cd &amp;lt;folder&amp;gt;&lt;/span&gt;
-&lt;span&gt;cd -&lt;/span&gt;
-&lt;span&gt;cp &amp;lt;src&amp;gt; \
-    &amp;lt;dst&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;
-</code></pre>
+</style>
+<span>cd &lt;folder&gt;</span>
+<span>cd -</span>
+<span>cp &lt;src&gt; \
+    &lt;dst&gt;</span>
+</pre>
 
-<hr><p>.. code::</p>
+        <hr />
 
-<pre><code>.. prompt:: bash # noauto
+        <pre>
+.. prompt:: bash #
 
-    cd &lt;folder&gt;
+    cd <folder>
     cd -
-</code></pre>
+        </pre>
 
-<p>=&gt;</p>
+        =>
 
-<p>.. code:: html</p>
-
-<pre><code>&lt;pre&gt;
-&lt;style type="text/css" scoped&gt;
-span:before {
+        <pre>
+<style type="text/css" scoped>
+    span:before {
     content: "# ";
 }
-&lt;/style&gt;
-&lt;span&gt;cd &amp;lt;folder&amp;gt;&lt;/span&gt;
-&lt;span&gt;cd -&lt;/span&gt;
-&lt;/pre&gt;
-</code></pre>
+</style>
+<span>cd &lt;folder&gt;</span>
+<span>cd -</span>
+        </pre>
 
-<hr><p>.. code::</p>
+        <hr />
 
-<pre><code>.. prompt::
+        <pre>
+.. prompt:: bash $,# auto
 
     $ sudo
     # exit
     $
-</code></pre>
+        </pre>
 
-<p>=&gt;</p>
+        =>
 
-<p>.. code:: html</p>
-
-<pre><code>&lt;pre&gt;
-&lt;style type="text/css" scoped&gt;
+        <pre>
+<style type="text/css" scoped>
 span.prompt0:before {
     content: "$ ";
 }
-span.pompt1:before {
+span.prompt1:before {
     content: "# ";
 }
-span.promt2:before {
-    content: "&gt;&gt;&gt; ";
-}
-&lt;/style&gt;
-&lt;span class="prompt0"&gt;sudo&lt;/span&gt;
-&lt;span class="prompt1"&gt;exit&lt;/span&gt;
-&lt;span class="prompt0"&gt;&lt;/span&gt;
-&lt;/pre&gt;
-</code></pre>
+</style>
+<span class="prompt0">sudo</span>
+<span class="prompt1">exit</span>
+<span class="prompt0"></span>
+        </pre>
 
-<hr><p>.. code::</p>
+        <hr />
 
-<pre><code>.. prompt:: bash $,(env)...$
+        <pre>
+.. prompt:: bash $,(env)...$ auto
 
     $ source env/bin/activate
     (env)...$ deactivate
     $
-</code></pre>
+        </pre>
 
-<p>=&gt;</p>
+        =>
 
-<p>.. code:: html</p>
-
-<pre><code>&lt;pre&gt;
-&lt;style type="text/css" scoped&gt;
+        <pre>
+<style type="text/css" scoped>
 span.prompt0:before {
     content: "$ ";
 }
-span.pompt1:before {
+span.prompt1:before {
     content: "(env)...$ ";
 }
-&lt;/style&gt;
-&lt;span class="prompt0"&gt;source env/bin/activate&lt;/span&gt;
-&lt;span class="prompt0"&gt;deactivate&lt;/span&gt;
-&lt;span class="prompt0"&gt;&lt;/span&gt;
-&lt;/pre&gt;
-</code></pre>
+</style>
+<span class="prompt0">source env/bin/activate</span>
+<span class="prompt1">deactivate</span>
+<span class="prompt0"></span>
+        </pre>
 
-<h2>
-<a name="build" class="anchor" href="#build"><span class="octicon octicon-link"></span></a>Build</h2>
-
-<p>.. code::</p>
-
-<pre><code>python bootstrap.py --distribute -v 1.7.1
-./buildout/bin/buildout
-</code></pre>
       </section>
     </div>
 
