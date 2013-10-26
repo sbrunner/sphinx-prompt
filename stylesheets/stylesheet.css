@@ -221,10 +221,10 @@ dl p {
 }
 
 hr {
-  height: 1px;
-  margin-bottom: 5px;
+  height: 3px;
+  margin: 20px -20px 20px 0;
   border: none;
-  background: url('../images/bg_hr.png') repeat-x center;
+  background: url('../images/bg_hr.png') repeat;
 }
 
 table {
