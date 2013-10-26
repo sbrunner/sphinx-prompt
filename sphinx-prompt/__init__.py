@@ -22,15 +22,17 @@ class PromptDirective(rst.Directive):
         self.assert_has_content()
 
         language = 'text'
-        prompts = ['$', '#', '>>>']
-        modifier = 'auto'
+        prompt = ''
+        modifier = []
 
         if self.arguments:
-            language = self.arguments[0]
+            language == self.arguments[0]
             if len(self.arguments) > 1:
                 prompt = self.arguments[1]
+            elif language == 'bash':
+                prompt = '$'
             if len(self.arguments) > 2:
-                modifier = self.arguments[2]
+                modifier = self.arguments[2].split(',')
             if modifier == 'auto':
                 prompts = prompt.split(',')
 
