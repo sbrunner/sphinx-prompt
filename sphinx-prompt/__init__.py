@@ -71,7 +71,11 @@ class PromptDirective(rst.Directive):
                         if len(statement) > 0:
                             html += '<span class="prompt%i">%s</span>\n' % (
                                 prompt_index,
-                                highlight('\n'.join(statement), Lexer(), HtmlFormatter(nowrap=True))
+                                highlight(
+                                    '\n'.join(statement),
+                                    Lexer(),
+                                    HtmlFormatter(nowrap=True)
+                                ).strip('\r\n')
                             )
                             statement = []
                         line = line[len(prompt):].strip()
@@ -81,8 +85,12 @@ class PromptDirective(rst.Directive):
             elif language == 'bash' or language == 'python':
                 statement.append(line)
                 if not line[-1] == '\\':
-                    html += '<span>%s</span>\n' % (
-                        highlight('\n'.join(statement), Lexer(), HtmlFormatter(nowrap=True))
+                    html += '<span class="prompt">%s</span>\n' % (
+                        highlight(
+                            '\n'.join(statement),
+                            Lexer(),
+                            HtmlFormatter(nowrap=True)
+                        ).strip('\r\n')
                     )
                     if prompt is not None:
                         latex += '\n%s %s' % (prompt, '\n'.join(statement))
@@ -90,8 +98,12 @@ class PromptDirective(rst.Directive):
                         latex += '\n' + '\n'.join(statement)
                     statement = []
             else:
-                html += '<span>%s</span>\n' % (
-                    highlight('\n'.join(line), Lexer(), HtmlFormatter(nowrap=True))
+                html += '<span class="prompt">%s</span>\n' % (
+                    highlight(
+                        line,
+                        Lexer(),
+                        HtmlFormatter(nowrap=True)
+                    ).strip('\r\n')
                 )
                 if prompt is not None:
                     latex += '\n%s %s' % (prompt, line)
