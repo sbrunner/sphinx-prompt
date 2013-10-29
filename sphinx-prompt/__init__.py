@@ -26,7 +26,7 @@ class PromptDirective(rst.Directive):
         modifier = []
 
         if self.arguments:
-            language == self.arguments[0]
+            language = self.arguments[0]
             if len(self.arguments) > 1:
                 prompt = self.arguments[1]
             elif language == 'bash':
