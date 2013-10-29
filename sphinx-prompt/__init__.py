@@ -22,7 +22,7 @@ class PromptDirective(rst.Directive):
         self.assert_has_content()
 
         language = 'text'
-        prompt = ''
+        prompt = None
         modifier = []
 
         if self.arguments:
@@ -45,7 +45,8 @@ class PromptDirective(rst.Directive):
 }
 """ % (index, prompt)
         else:
-            html += """span:before {
+            if prompt is not None:
+                html += """span.prompt:before {
   content: "%s ";
 }
 """ % (prompt)
@@ -83,13 +84,19 @@ class PromptDirective(rst.Directive):
                     html += '<span>%s</span>\n' % (
                         highlight('\n'.join(statement), Lexer(), HtmlFormatter(nowrap=True))
                     )
-                    latex += '\n%s %s' % (prompt, '\n'.join(statement))
+                    if prompt is not None:
+                        latex += '\n%s %s' % (prompt, '\n'.join(statement))
+                    else:
+                        latex += '\n' + '\n'.join(statement)
                     statement = []
             else:
                 html += '<span>%s</span>\n' % (
                     highlight('\n'.join(line), Lexer(), HtmlFormatter(nowrap=True))
                 )
-                latex += '\n%s %s' % (prompt, '\n'.join(line))
+                if prompt is not None:
+                    latex += '\n%s %s' % (prompt, line)
+                else:
+                    latex += '\n' + line
 
         html += "</pre>"
         latex += "\n\\end{Verbatim}"
