@@ -15,7 +15,7 @@ from pygments.formatters import HtmlFormatter
 
 class PromptDirective(rst.Directive):
 
-    optional_arguments = 2
+    optional_arguments = 3
     has_content = True
 
     def run(self):
@@ -23,7 +23,7 @@ class PromptDirective(rst.Directive):
 
         language = 'text'
         prompt = None
-        modifier = []
+        modifiers = []
 
         if self.arguments:
             language = self.arguments[0]
@@ -32,13 +32,13 @@ class PromptDirective(rst.Directive):
             elif language == 'bash':
                 prompt = '$'
             if len(self.arguments) > 2:
-                modifier = self.arguments[2].split(',')
-            if modifier == 'auto':
+                modifiers = self.arguments[2].split(',')
+            if 'auto' in modifiers:
                 prompts = prompt.split(',')
 
         html = '<pre class="highlight">'
         html += '<style type="text/css" scoped>'
-        if modifier == 'auto':
+        if 'auto' in modifiers:
             for index, prompt in enumerate(prompts):
                 html += """span.prompt%i:before {
   content: "%s ";
@@ -64,8 +64,9 @@ class PromptDirective(rst.Directive):
         statement = []
         prompt_index = -1
         for line in self.content:
-            if modifier == 'auto':
+            if 'auto' in modifiers:
                 latex += '\n' + line
+
                 for index, prompt in enumerate(prompts):
                     if line.startswith(prompt):
                         if len(statement) > 0:
@@ -81,10 +82,11 @@ class PromptDirective(rst.Directive):
                         line = line[len(prompt):].strip()
                         prompt_index = index
                         break
+
                 statement.append(line)
             elif language == 'bash' or language == 'python':
                 statement.append(line)
-                if not line[-1] == '\\':
+                if len(line) == 0 or not line[-1] == '\\':
                     html += '<span class="prompt">%s</span>\n' % (
                         highlight(
                             '\n'.join(statement),
@@ -109,6 +111,17 @@ class PromptDirective(rst.Directive):
                     latex += '\n%s %s' % (prompt, line)
                 else:
                     latex += '\n' + line
+
+        # Add last prompt
+        if 'auto' in modifiers and len(statement) > 0:
+            html += '<span class="prompt%i">%s</span>\n' % (
+                prompt_index,
+                highlight(
+                    '\n'.join(statement),
+                    Lexer(),
+                    HtmlFormatter(nowrap=True)
+                ).strip('\r\n')
+            )
 
         html += "</pre>"
         latex += "\n\\end{Verbatim}"
