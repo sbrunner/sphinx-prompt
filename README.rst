@@ -3,7 +3,7 @@ Sphinx Prompt
 
 .. contents:: Table of contents
 
-Inititlise
+Initialise
 ----------
 
 In ``conf.py`` add ``extensions += ['sphinx-prompt']``.
@@ -30,7 +30,7 @@ Supported language:
 Prompt(s)
 ~~~~~~~~~
 
-If modifier is auto, a coma separated list of prompts to find in the statements.
+If modifier is auto, a comma-separated list of prompts to find in the statements.
 
 Else the prompt to add on each statements, for Python and Bash language the end
 ``\`` is supported.
