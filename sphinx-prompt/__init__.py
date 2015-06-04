@@ -13,6 +13,35 @@ from pygments.lexers import ScalaLexer
 from pygments.formatters import HtmlFormatter
 
 
+class PromptCache:
+
+    def __init__(self):
+        self.clear()
+
+    def clear(self, *ignored):
+        # ignored parameters allow this method to be used as event handler
+        self.next_index = 1
+        self.prompts = {}
+
+    def register_prompt(self, prompt):
+        if prompt in self.prompts:
+            return ''
+        else:
+            index = self.next_index
+            self.next_index = index + 1
+            self.prompts[prompt] = index
+            return """span.prompt%i:before {
+  content: "%s ";
+}
+""" % (index, prompt)
+
+    def get_prompt_class(self, prompt):
+        return 'prompt%i' % self.prompts[prompt]
+
+
+cache = PromptCache()
+
+
 class PromptDirective(rst.Directive):
 
     optional_arguments = 3
@@ -37,20 +66,15 @@ class PromptDirective(rst.Directive):
                 prompts = prompt.split(',')
 
         html = '<pre class="highlight">'
-        html += '<style type="text/css" scoped>'
+        styles = ''
         if 'auto' in modifiers:
-            for index, prompt in enumerate(prompts):
-                html += """span.prompt%i:before {
-  content: "%s ";
-}
-""" % (index, prompt)
+            for prompt in prompts:
+                styles += cache.register_prompt(prompt)
         else:
             if prompt is not None:
-                html += """span.prompt:before {
-  content: "%s ";
-}
-""" % (prompt)
-        html += '</style>'
+                styles += cache.register_prompt(prompt)
+        if styles:
+            html += '<style type="text/css">\n' + styles + '</style>'
         latex = "\\begin{Verbatim}[commandchars=\\\\\\{\\}]"
 
         Lexer = TextLexer
@@ -62,16 +86,16 @@ class PromptDirective(rst.Directive):
             Lexer = ScalaLexer
 
         statement = []
-        prompt_index = -1
-        for line in self.content:
-            if 'auto' in modifiers:
+        if 'auto' in modifiers:
+            prompt_class = ''
+            for line in self.content:
                 latex += '\n' + line
 
-                for index, prompt in enumerate(prompts):
+                for prompt in prompts:
                     if line.startswith(prompt):
                         if len(statement) > 0:
-                            html += '<span class="prompt%i">%s</span>\n' % (
-                                prompt_index,
+                            html += '<span class="%s">%s</span>\n' % (
+                                prompt_class,
                                 highlight(
                                     '\n'.join(statement),
                                     Lexer(),
@@ -80,14 +104,26 @@ class PromptDirective(rst.Directive):
                             )
                             statement = []
                         line = line[len(prompt):].strip()
-                        prompt_index = index
+                        prompt_class = cache.get_prompt_class(prompt)
                         break
 
                 statement.append(line)
-            elif language == 'bash' or language == 'python':
+            # Add last prompt
+            if len(statement) > 0:
+                html += '<span class="%s">%s</span>\n' % (
+                    prompt_class,
+                    highlight(
+                        '\n'.join(statement),
+                        Lexer(),
+                        HtmlFormatter(nowrap=True)
+                    ).strip('\r\n')
+                )
+        elif language == 'bash' or language == 'python':
+            for line in self.content:
                 statement.append(line)
                 if len(line) == 0 or not line[-1] == '\\':
-                    html += '<span class="prompt">%s</span>\n' % (
+                    html += '<span class="%s">%s</span>\n' % (
+                        cache.get_prompt_class(prompt),
                         highlight(
                             '\n'.join(statement),
                             Lexer(),
@@ -99,8 +135,10 @@ class PromptDirective(rst.Directive):
                     else:
                         latex += '\n' + '\n'.join(statement)
                     statement = []
-            else:
-                html += '<span class="prompt">%s</span>\n' % (
+        else:
+            for line in self.content:
+                html += '<span class="%s">%s</span>\n' % (
+                    cache.get_prompt_class(prompt),
                     highlight(
                         line,
                         Lexer(),
@@ -111,17 +149,6 @@ class PromptDirective(rst.Directive):
                     latex += '\n%s %s' % (prompt, line)
                 else:
                     latex += '\n' + line
-
-        # Add last prompt
-        if 'auto' in modifiers and len(statement) > 0:
-            html += '<span class="prompt%i">%s</span>\n' % (
-                prompt_index,
-                highlight(
-                    '\n'.join(statement),
-                    Lexer(),
-                    HtmlFormatter(nowrap=True)
-                ).strip('\r\n')
-            )
 
         html += "</pre>"
         latex += "\n\\end{Verbatim}"
@@ -134,3 +161,4 @@ class PromptDirective(rst.Directive):
 
 def setup(app):
     app.add_directive('prompt', PromptDirective)
+    app.connect('env-purge-doc', cache.clear)
