@@ -118,7 +118,7 @@ class PromptDirective(rst.Directive):
                         HtmlFormatter(nowrap=True)
                     ).strip('\r\n')
                 )
-        elif language == 'bash' or language == 'python':
+        elif language in ['bash', 'python']:
             for line in self.content:
                 statement.append(line)
                 if len(line) == 0 or not line[-1] == '\\':
