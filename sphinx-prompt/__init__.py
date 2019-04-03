@@ -65,7 +65,7 @@ class PromptDirective(rst.Directive):
             if 'auto' in modifiers:
                 prompts = prompt.split(',')
 
-        html = '<pre class="highlight">'
+        html = '<div class="highlight-default notranslate"><div class="highlight"><pre>'
         styles = ''
         if 'auto' in modifiers:
             for prompt in prompts:
@@ -150,7 +150,7 @@ class PromptDirective(rst.Directive):
                 else:
                     latex += '\n' + line
 
-        html += "</pre>"
+        html += "</pre></div></div>"
         latex += "\n\\end{Verbatim}"
 
         return [
