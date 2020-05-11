@@ -162,3 +162,7 @@ class PromptDirective(rst.Directive):
 def setup(app):
     app.add_directive('prompt', PromptDirective)
     app.connect('env-purge-doc', cache.clear)
+    return {
+        'parallel_read_safe': True,
+        'parallel_write_safe': True,
+    }
