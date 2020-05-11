@@ -1,13 +1,6 @@
 # -*- coding: utf-8 -*-
 
-import os
-
 from setuptools import setup, find_packages
-
-here = os.path.abspath(os.path.dirname(__file__))
-README = (
-    open(os.path.join(here, 'README.rst')).read()
-)
 
 install_requires = [
     'Sphinx',
@@ -20,11 +13,11 @@ tests_require = [
 
 setup(
     name='sphinx-prompt',
-    version='1.1.0',
+    version='1.2.0',
     description="""
 Sphinx directive to add unselectable prompt
 """,
-    long_description=README,
+    long_description="`Sphinx directive to add unselectable prompt <https://github.com/sbrunner/sphinx-prompt>`_",
     classifiers=[
         'Development Status :: 4 - Beta',
         'Environment :: Console',
@@ -34,7 +27,7 @@ Sphinx directive to add unselectable prompt
     ],
     author='Stéphane Brunner',
     author_email='stephane.brunner@camptocamp.com',
-    url='http://github.com/sbrunner/sphinx-prompt',
+    url='https://github.com/sbrunner/sphinx-prompt',
     license='BSD',
     keywords='gis tilecloud chain',
     packages=find_packages(exclude=["*.tests", "*.tests.*"]),
