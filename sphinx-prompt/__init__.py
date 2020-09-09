@@ -103,7 +103,7 @@ class PromptDirective(rst.Directive):
                                 ).strip('\r\n')
                             )
                             statement = []
-                        line = line[len(prompt):].strip()
+                        line = line[len(prompt):].rstrip()
                         prompt_class = cache.get_prompt_class(prompt)
                         break
 
