@@ -13,7 +13,7 @@ tests_require = [
 
 setup(
     name='sphinx-prompt',
-    version='1.2.0',
+    version='1.3.0',
     description="Sphinx directive to add unselectable prompt",
     long_description="`Sphinx directive to add unselectable prompt <https://github.com/sbrunner/sphinx-prompt>`_",
     classifiers=[
