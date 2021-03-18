@@ -6,7 +6,7 @@ from docutils import nodes
 from docutils.parsers import rst
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
-from pygments.lexers import BashLexer, PythonLexer, ScalaLexer, TextLexer
+from pygments.lexers import BashLexer, BatchLexer, PowerShellLexer, PythonLexer, ScalaLexer, TextLexer
 
 
 class PromptCache:
@@ -57,6 +57,10 @@ class PromptDirective(rst.Directive):
                 prompt = self.arguments[1]
             elif language == "bash":
                 prompt = "$"
+            elif language == "batch":
+                prompt = r"C:\\>"
+            elif language == "powershell":
+                prompt = r"PS C:\\>"
             if len(self.arguments) > 2:
                 modifiers = self.arguments[2].split(",")
             if "auto" in modifiers:
@@ -77,6 +81,10 @@ class PromptDirective(rst.Directive):
         Lexer = TextLexer
         if language == "bash":
             Lexer = BashLexer
+        elif language == "batch":
+            Lexer = BatchLexer
+        elif language == "powershell":
+            Lexer = PowerShellLexer
         elif language == "python":
             Lexer = PythonLexer
         elif language == "scala":
@@ -109,7 +117,7 @@ class PromptDirective(rst.Directive):
                     prompt_class,
                     highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip("\r\n"),
                 )
-        elif language in ["bash", "python"]:
+        elif language in ["bash", "batch", "powershell", "python"]:
             for line in self.content:
                 statement.append(line)
                 if len(line) == 0 or not line[-1] == "\\":
