@@ -25,7 +25,7 @@ The prompt can be further customized in one of two ways:
 
     .. code::
 
-        .. prompt:: [<language> [<prompts> [<modifier>]]]
+        .. prompt:: [<language> [<prompts> [<modifiers>]]]
 
            <statements>
 
@@ -36,7 +36,7 @@ The prompt can be further customized in one of two ways:
         .. prompt::
             :language: <language>
             :prompts: <prompts>
-            :modifier: <modifier>
+            :modifiers: <modifiers>
 
            <statements>
 
