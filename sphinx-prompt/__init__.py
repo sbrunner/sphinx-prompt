@@ -43,6 +43,13 @@ PROMPTS = {
     "batch": r"C:\\>",
     "powershell": r"PS C:\\>",
 }
+LEXERS = {
+    "bash": BashLexer,
+    "batch": BatchLexer,
+    "powershell": PowerShellLexer,
+    "python": PythonLexer,
+    "scala": ScalaLexer,
+}
 
 
 class PromptDirective(rst.Directive):
@@ -93,17 +100,7 @@ class PromptDirective(rst.Directive):
             html += '<style type="text/css">\n' + styles + "</style>"
         latex = "\\begin{Verbatim}[commandchars=\\\\\\{\\}]"
 
-        Lexer = TextLexer
-        if language == "bash":
-            Lexer = BashLexer
-        elif language == "batch":
-            Lexer = BatchLexer
-        elif language == "powershell":
-            Lexer = PowerShellLexer
-        elif language == "python":
-            Lexer = PythonLexer
-        elif language == "scala":
-            Lexer = ScalaLexer
+        Lexer = LEXERS.get(language, TextLexer)
 
         statement = []
         if "auto" in modifiers:
