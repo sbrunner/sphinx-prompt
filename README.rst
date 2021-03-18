@@ -24,6 +24,8 @@ Supported language:
 
 - ``text`` (no pigments, default)
 - ``bash``
+- ``batch``
+- ``powershell``
 - ``python``
 - ``scala``
 
@@ -35,7 +37,10 @@ If modifier is auto, a comma-separated list of prompts to find in the statements
 Else the prompt to add on each statements, for Python and Bash language the end
 ``\`` is supported.
 
-Default to empty, ``$`` for bash language.
+Defaults to empty, except for the shell languages listed below:
+- ``bash`` - ``$``
+- ``batch`` - ``C:\>``
+- ``powershell`` - ``PS C:\>``
 
 Examples
 --------
