@@ -129,7 +129,7 @@ class PromptDirective(rst.Directive):
                     prompt_class,
                     highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip("\r\n"),
                 )
-        elif language in ["bash", "batch", "powershell", "python"]:
+        elif language in ["bash", "python"]:
             for line in self.content:
                 statement.append(line)
                 if len(line) == 0 or not line[-1] == "\\":
