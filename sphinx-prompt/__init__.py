@@ -8,6 +8,9 @@ from docutils.parsers.rst import directives
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import BashLexer, BatchLexer, PowerShellLexer, PythonLexer, ScalaLexer, TextLexer
+from sphinx.util import logging
+
+logger = logging.getLogger(__name__)
 
 
 class PromptCache:
@@ -74,9 +77,11 @@ class PromptDirective(rst.Directive):
         for idx, option_name in enumerate(("language", "prompts", "modifiers")):
             if arg_count > idx:
                 if self.options.get(option_name):
-                    self.warning(
-                        "{0} is already passed as an option, ignoring the value passed"
-                        " as positional argument and all arguments that come after it.".format(option_name)
+                    logger.warning(
+                        "%s is already passed as an option, ignoring the value passed"
+                        " as positional argument and all arguments that come after it.",
+                        option_name,
+                        location=(self.state.document.settings.env.docname, self.lineno),
                     )
                     break
                 else:
