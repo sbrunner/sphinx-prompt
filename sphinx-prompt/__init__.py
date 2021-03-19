@@ -4,6 +4,7 @@
 
 from docutils import nodes
 from docutils.parsers import rst
+from docutils.parsers.rst import directives
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import BashLexer, BatchLexer, PowerShellLexer, PythonLexer, ScalaLexer, TextLexer
@@ -37,11 +38,28 @@ class PromptCache:
 
 
 cache = PromptCache()
+PROMPTS = {
+    "bash": "$",
+    "batch": r"C:\\>",
+    "powershell": r"PS C:\\>",
+}
+LEXERS = {
+    "bash": BashLexer,
+    "batch": BatchLexer,
+    "powershell": PowerShellLexer,
+    "python": PythonLexer,
+    "scala": ScalaLexer,
+}
 
 
 class PromptDirective(rst.Directive):
 
     optional_arguments = 3
+    option_spec = {
+        "language": directives.unchanged_required,
+        "prompts": directives.unchanged_required,
+        "modifiers": directives.unchanged_required,
+    }
     has_content = True
 
     def run(self):
@@ -51,20 +69,24 @@ class PromptDirective(rst.Directive):
         prompt = None
         modifiers = []
 
-        if self.arguments:
-            language = self.arguments[0]
-            if len(self.arguments) > 1:
-                prompt = self.arguments[1]
-            elif language == "bash":
-                prompt = "$"
-            elif language == "batch":
-                prompt = r"C:\\>"
-            elif language == "powershell":
-                prompt = r"PS C:\\>"
-            if len(self.arguments) > 2:
-                modifiers = self.arguments[2].split(",")
-            if "auto" in modifiers:
-                prompts = prompt.split(",")
+        arg_count = len(self.arguments)
+
+        for idx, option_name in enumerate(("language", "prompts", "modifiers")):
+            if arg_count > idx:
+                if self.options.get(option_name):
+                    self.warning(
+                        "{0} is already passed as an option, ignoring the value passed"
+                        " as positional argument and all arguments that come after it.".format(option_name)
+                    )
+                    break
+                else:
+                    self.options[option_name] = self.arguments[idx]
+
+        language = self.options.get("language") or "text"
+        prompt = self.options.get("prompts") or PROMPTS.get(language, "")
+        modifiers = self.options.get("modifiers", "").split(",")
+        if "auto" in modifiers:
+            prompts = prompt.split(",")
 
         html = '<div class="highlight-default notranslate"><div class="highlight"><pre>'
         styles = ""
@@ -78,17 +100,7 @@ class PromptDirective(rst.Directive):
             html += '<style type="text/css">\n' + styles + "</style>"
         latex = "\\begin{Verbatim}[commandchars=\\\\\\{\\}]"
 
-        Lexer = TextLexer
-        if language == "bash":
-            Lexer = BashLexer
-        elif language == "batch":
-            Lexer = BatchLexer
-        elif language == "powershell":
-            Lexer = PowerShellLexer
-        elif language == "python":
-            Lexer = PythonLexer
-        elif language == "scala":
-            Lexer = ScalaLexer
+        Lexer = LEXERS.get(language, TextLexer)
 
         statement = []
         if "auto" in modifiers:
@@ -117,7 +129,7 @@ class PromptDirective(rst.Directive):
                     prompt_class,
                     highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip("\r\n"),
                 )
-        elif language in ["bash", "batch", "powershell", "python"]:
+        elif language in ["bash", "python"]:
             for line in self.content:
                 statement.append(line)
                 if len(line) == 0 or not line[-1] == "\\":
