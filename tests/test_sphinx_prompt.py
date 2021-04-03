@@ -120,12 +120,27 @@ span.prompt1:before {
     [
         ["bash"],
         {},
-        ["""lexer 1 2 \"tree\""""],
+        ['lexer 1 2 "tree"'],
         """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
 </style><span class="prompt1">lexer <span class="m">1</span> <span class="m">2</span> <span class="s2">&quot;tree&quot;</span></span>
+</pre></div></div>""",
+    ],
+    [
+        ["bash", "$,#", "auto"],
+        {},
+        ["$ user", "# root"],
+        """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+span.prompt2:before {
+  content: "# ";
+}
+</style><span class="prompt1">user</span>
+<span class="prompt2">root</span>
 </pre></div></div>""",
     ],
 ]
