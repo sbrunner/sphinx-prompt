@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+# pylint: disable=invalid-name
 
 from docutils import nodes
 from docutils.parsers import rst
@@ -14,10 +14,11 @@ logger = logging.getLogger(__name__)
 
 class PromptCache:
     def __init__(self):
-        self.clear()
+        self.next_index = 1
+        self.prompts = {}
 
-    def clear(self, *ignored):
-        # ignored parameters allow this method to be used as event handler
+    def clear(self, *args):
+        del args
         self.next_index = 1
         self.prompts = {}
 
@@ -104,7 +105,7 @@ class PromptDirective(rst.Directive):
             html += '<style type="text/css">\n' + styles + "</style>"
         latex = "\\begin{Verbatim}[commandchars=\\\\\\{\\}]"
 
-        Lexer = LEXERS.get(language, TextLexer)
+        Lexer = LEXERS.get(language, TextLexer)  # noqa: N806, pylint: disable=invalid-name
 
         statement = []
         if "auto" in modifiers:
