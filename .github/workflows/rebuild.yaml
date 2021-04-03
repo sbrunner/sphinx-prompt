@@ -1,21 +1,25 @@
----
-name: Build
+name: Rebuild
 
 on:
-  push:
-
-env:
-  IN_CI: '1'
+  schedule:
+    - cron: '30 2 * * *'
 
 jobs:
-  build:
-    name: Build
+  rebuild:
     runs-on: ubuntu-20.04
-    timeout-minutes: 15
-    if: "!startsWith(github.event.head_commit.message, '[skip ci] ')"
+    name: Rebuild
+    timeout-minutes: 20
+
+    strategy:
+      fail-fast: false
+      matrix:
+        branch:
+          - master
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ matrix.branch }}
 
       - run: echo "${HOME}/.local/bin" >> ${GITHUB_PATH}
       - run: python3 -m pip install --user --requirement=ci/requirements.txt
