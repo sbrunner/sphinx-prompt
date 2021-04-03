@@ -1,0 +1,24 @@
+---
+strictness: veryhigh
+
+pep8:
+  disable:
+    - E501 # line too long
+    - E203 # whitespace before ':'
+
+pylint:
+  disable:
+    - line-too-long
+    - no-else-break
+    - no-else-return
+    - too-many-branches
+    - too-many-statements
+
+bandit:
+  run: true
+
+mypy:
+  run: true
+
+mccabe:
+  run: false

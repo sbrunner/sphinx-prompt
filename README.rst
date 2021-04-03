@@ -84,11 +84,14 @@ Examples
 
 See: http://sbrunner.github.io/sphinx-prompt/
 
-Build
------
+Run tests and prospector
+------------------------
 
 .. code::
 
-    python3 -m pip install --user --upgrade pytest
-    python3 -m pip install --user --editable .
-    pytest
+    python3 -m pip install --user --upgrade pipenv
+    pipenv sync --dev
+    pipenv run pytest
+    pipenv run prospector
+
+The code should be formatted with ``black`` add ``isort``.

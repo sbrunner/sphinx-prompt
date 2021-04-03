@@ -27,6 +27,7 @@ jobs:
       - name: Checks
         run: c2cciutils-checks
 
-      - run: python3 -m pip install --user --editable .
-      - run: python3 -m pip install --user pytest
-      - run: pytest
+      - run: python3 -m pip install --user --requirement=requirements.txt
+      - run: pipenv sync --dev
+      - run: pipenv run pytest
+      - run: pipenv run prospector
