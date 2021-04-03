@@ -51,7 +51,7 @@ Positional arguments can be mixed with options **if** they don't overlap
     .. prompt:: bash
         :prompts: (cool_project) $
 
-       python -m pip install -U sphinx-prompt
+       python3 -m pip install --upgrade sphinx-prompt
 
 Language
 ~~~~~~~~
@@ -89,5 +89,6 @@ Build
 
 .. code::
 
-    python bootstrap.py --distribute -v 1.7.1
-    ./buildout/bin/buildout
+    python3 -m pip install --user --upgrade pytest
+    python3 -m pip install --user --editable .
+    pytest

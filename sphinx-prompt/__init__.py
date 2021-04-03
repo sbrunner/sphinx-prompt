@@ -39,7 +39,7 @@ class PromptCache:
         return "prompt{:d}".format(self.prompts[prompt])
 
 
-cache = PromptCache()
+_cache = PromptCache()
 PROMPTS = {
     "bash": "$",
     "batch": r"C:\\>",
@@ -96,10 +96,10 @@ class PromptDirective(rst.Directive):
         styles = ""
         if "auto" in modifiers:
             for prompt in prompts:
-                styles += cache.register_prompt(prompt)
+                styles += _cache.register_prompt(prompt)
         else:
             if prompt is not None:
-                styles += cache.register_prompt(prompt)
+                styles += _cache.register_prompt(prompt)
         if styles:
             html += '<style type="text/css">\n' + styles + "</style>"
         latex = "\\begin{Verbatim}[commandchars=\\\\\\{\\}]"
@@ -123,7 +123,7 @@ class PromptDirective(rst.Directive):
                             )
                             statement = []
                         line = line[len(prompt) + 1 :].rstrip()
-                        prompt_class = cache.get_prompt_class(prompt)
+                        prompt_class = _cache.get_prompt_class(prompt)
                         break
 
                 statement.append(line)
@@ -138,7 +138,7 @@ class PromptDirective(rst.Directive):
                 statement.append(line)
                 if len(line) == 0 or not line[-1] == "\\":
                     html += '<span class="{!s}">{!s}</span>\n'.format(
-                        cache.get_prompt_class(prompt),
+                        _cache.get_prompt_class(prompt),
                         highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip("\r\n"),
                     )
                     if prompt is not None:
@@ -149,7 +149,7 @@ class PromptDirective(rst.Directive):
         else:
             for line in self.content:
                 html += '<span class="{!s}">{!s}</span>\n'.format(
-                    cache.get_prompt_class(prompt),
+                    _cache.get_prompt_class(prompt),
                     highlight(line, Lexer(), HtmlFormatter(nowrap=True)).strip("\r\n"),
                 )
                 if prompt is not None:
@@ -168,7 +168,7 @@ class PromptDirective(rst.Directive):
 
 def setup(app):
     app.add_directive("prompt", PromptDirective)
-    app.connect("env-purge-doc", cache.clear)
+    app.connect("env-purge-doc", _cache.clear)
     return {
         "parallel_read_safe": True,
         "parallel_write_safe": True,
