@@ -6,7 +6,7 @@ testdata = [
     [
         [],
         {},
-        ["""one line"""],
+        ["one line"],
         """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: " ";
@@ -17,7 +17,7 @@ span.prompt1:before {
     [
         ["bash"],
         {},
-        ["""one line"""],
+        ["one line"],
         """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
@@ -28,7 +28,7 @@ span.prompt1:before {
     [
         [],
         {"language": "bash"},
-        ["""one line"""],
+        ["one line"],
         """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
@@ -39,19 +39,19 @@ span.prompt1:before {
     [
         ["bash"],
         {},
-        ["""tow\nline"""],
+        ["tow", "line"],
         """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">tow
-line</span>
+</style><span class="prompt1">tow</span>
+<span class="prompt1">line</span>
 </pre></div></div>""",
     ],
     [
         ["bash"],
         {},
-        ["""one split \\\nline"""],
+        ["one split \\", "line"],
         """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
@@ -63,20 +63,20 @@ line</span>
     [
         ["bash"],
         {},
-        ["""mixed split \\\nline\nsecond"""],
+        ["mixed split \\", "line", "second"],
         """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
 </style><span class="prompt1">mixed split <span class="se">\\</span>
-line
-second</span>
+line</span>
+<span class="prompt1">second</span>
 </pre></div></div>""",
     ],
     [
         ["bash", "%"],
         {},
-        ["""other prompt"""],
+        ["other prompt"],
         """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "% ";
@@ -87,7 +87,7 @@ span.prompt1:before {
     [
         [],
         {"language": "bash", "prompts": "%"},
-        ["""other prompt opt"""],
+        ["other prompt opt"],
         """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "% ";
@@ -98,7 +98,7 @@ span.prompt1:before {
     [
         ["batch"],
         {},
-        ["""batch"""],
+        ["batch"],
         """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "C:\\\\> ";
@@ -109,7 +109,7 @@ span.prompt1:before {
     [
         ["powershell"],
         {},
-        ["""powershell"""],
+        ["powershell"],
         """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "PS C:\\\\> ";
@@ -120,12 +120,27 @@ span.prompt1:before {
     [
         ["bash"],
         {},
-        ["""lexer 1 2 \"tree\""""],
+        ['lexer 1 2 "tree"'],
         """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
 span.prompt1:before {
   content: "$ ";
 }
 </style><span class="prompt1">lexer <span class="m">1</span> <span class="m">2</span> <span class="s2">&quot;tree&quot;</span></span>
+</pre></div></div>""",
+    ],
+    [
+        ["bash", "$,#", "auto"],
+        {},
+        ["$ user", "# root"],
+        """<div class="highlight-default notranslate"><div class="highlight"><pre><style type="text/css">
+span.prompt1:before {
+  content: "$ ";
+}
+span.prompt2:before {
+  content: "# ";
+}
+</style><span class="prompt1">user</span>
+<span class="prompt2">root</span>
 </pre></div></div>""",
     ],
 ]
