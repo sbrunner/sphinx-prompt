@@ -33,7 +33,7 @@ if sys.platform == "win32":
 
     def quote(c):
         if " " in c:
-            return '"{0!s}"'.format(c)  # work around spawn lamosity on windows
+            return f'"{c!s}"'  # work around spawn lamosity on windows
         else:
             return c
 
@@ -98,7 +98,7 @@ distribute_source = "http://python-distribute.org/distribute_setup.py"
 def normalize_to_url(option, opt_str, value, parser):
     if value:
         if "://" not in value:  # It doesn't smell like a URL.
-            value = "file://{0!s}".format(urllib.pathname2url(os.path.abspath(os.path.expanduser(value))))
+            value = "file://{!s}".format(urllib.pathname2url(os.path.abspath(os.path.expanduser(value))))
         if opt_str == "--download-base" and not value.endswith("/"):
             # Download base needs a trailing slash to make the world happy.
             value += "/"
