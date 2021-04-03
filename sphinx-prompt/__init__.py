@@ -29,15 +29,15 @@ class PromptCache:
             index = self.next_index
             self.next_index = index + 1
             self.prompts[prompt] = index
-            return """span.prompt{0:d}:before {{
-  content: "{1!s} ";
+            return """span.prompt{}:before {{
+  content: "{} ";
 }}
 """.format(
                 index, prompt
             )
 
     def get_prompt_class(self, prompt):
-        return "prompt{:d}".format(self.prompts[prompt])
+        return "prompt{}".format(self.prompts[prompt])
 
 
 _cache = PromptCache()
@@ -116,7 +116,7 @@ class PromptDirective(rst.Directive):
                 for prompt in prompts:
                     if line.startswith(prompt):
                         if len(statement) > 0:
-                            html += '<span class="{!s}">{!s}</span>\n'.format(
+                            html += '<span class="{}">{}</span>\n'.format(
                                 prompt_class,
                                 highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip(
                                     "\r\n"
@@ -130,7 +130,7 @@ class PromptDirective(rst.Directive):
                 statement.append(line)
             # Add last prompt
             if len(statement) > 0:
-                html += '<span class="{!s}">{!s}</span>\n'.format(
+                html += '<span class="{}">{}</span>\n'.format(
                     prompt_class,
                     highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip("\r\n"),
                 )
@@ -138,23 +138,23 @@ class PromptDirective(rst.Directive):
             for line in self.content:
                 statement.append(line)
                 if len(line) == 0 or not line[-1] == "\\":
-                    html += '<span class="{!s}">{!s}</span>\n'.format(
+                    html += '<span class="{}">{}</span>\n'.format(
                         _cache.get_prompt_class(prompt),
                         highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip("\r\n"),
                     )
                     if prompt is not None:
-                        latex += "\n{!s} {!s}".format(prompt, "\n".join(statement))
+                        latex += "\n{} {}".format(prompt, "\n".join(statement))
                     else:
                         latex += "\n" + "\n".join(statement)
                     statement = []
         else:
             for line in self.content:
-                html += '<span class="{!s}">{!s}</span>\n'.format(
+                html += '<span class="{}">{}</span>\n'.format(
                     _cache.get_prompt_class(prompt),
                     highlight(line, Lexer(), HtmlFormatter(nowrap=True)).strip("\r\n"),
                 )
                 if prompt is not None:
-                    latex += f"\n{prompt!s} {line!s}"
+                    latex += f"\n{prompt} {line}"
                 else:
                     latex += "\n" + line
 
