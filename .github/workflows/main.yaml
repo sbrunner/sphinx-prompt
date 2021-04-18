@@ -5,9 +5,6 @@ on:
   push:
   pull_request:
 
-env:
-  IN_CI: '1'
-
 jobs:
   build:
     name: Build
