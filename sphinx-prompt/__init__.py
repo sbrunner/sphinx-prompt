@@ -1,6 +1,9 @@
 #!/usr/bin/python
 # pylint: disable=invalid-name
 
+from typing import Any, Dict, List
+
+import sphinx.application
 from docutils import nodes
 from docutils.parsers import rst
 from docutils.parsers.rst import directives
@@ -13,16 +16,16 @@ logger = logging.getLogger(__name__)
 
 
 class PromptCache:
-    def __init__(self):
+    def __init__(self) -> None:
         self.next_index = 1
-        self.prompts = {}
+        self.prompts: Dict[str, int] = {}
 
-    def clear(self, *args):
+    def clear(self, *args: Any) -> None:
         del args
         self.next_index = 1
         self.prompts = {}
 
-    def register_prompt(self, prompt):
+    def register_prompt(self, prompt: str) -> str:
         if prompt in self.prompts:
             return ""
         else:
@@ -36,7 +39,7 @@ class PromptCache:
                 index, prompt
             )
 
-    def get_prompt_class(self, prompt):
+    def get_prompt_class(self, prompt: str) -> str:
         return "prompt{}".format(self.prompts[prompt])
 
 
@@ -55,7 +58,7 @@ LEXERS = {
 }
 
 
-class PromptDirective(rst.Directive):
+class PromptDirective(rst.Directive):  # type: ignore
 
     optional_arguments = 3
     option_spec = {
@@ -65,12 +68,8 @@ class PromptDirective(rst.Directive):
     }
     has_content = True
 
-    def run(self):
+    def run(self) -> List[nodes.raw]:
         self.assert_has_content()
-
-        language = "text"
-        prompt = None
-        modifiers = []
 
         arg_count = len(self.arguments)
 
@@ -87,11 +86,11 @@ class PromptDirective(rst.Directive):
                 else:
                     self.options[option_name] = self.arguments[idx]
 
-        language = self.options.get("language") or "text"
-        prompt = self.options.get("prompts") or PROMPTS.get(language, "")
-        modifiers = self.options.get("modifiers", "").split(",")
+        language: str = self.options.get("language") or "text"
+        prompt: str = self.options.get("prompts") or PROMPTS.get(language, "")
+        modifiers: List[str] = self.options.get("modifiers", "").split(",")
         if "auto" in modifiers:
-            prompts = prompt.split(",")
+            prompts: List[str] = prompt.split(",")
 
         html = '<div class="highlight-default notranslate"><div class="highlight"><pre>'
         styles = ""
@@ -107,7 +106,7 @@ class PromptDirective(rst.Directive):
 
         Lexer = LEXERS.get(language, TextLexer)  # noqa: N806, pylint: disable=invalid-name
 
-        statement = []
+        statement: List[str] = []
         if "auto" in modifiers:
             prompt_class = ""
             for line in self.content:
@@ -167,7 +166,7 @@ class PromptDirective(rst.Directive):
         ]
 
 
-def setup(app):
+def setup(app: sphinx.application.Sphinx) -> Dict[str, bool]:
     app.add_directive("prompt", PromptDirective)
     app.connect("env-purge-doc", _cache.clear)
     return {
