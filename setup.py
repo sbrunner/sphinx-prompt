@@ -33,6 +33,7 @@ setup(
         "Topic :: Documentation :: Sphinx",
         "Topic :: Documentation",
         "Topic :: Software Development :: Documentation",
+        "Typing :: Typed",
     ],
     author="Stéphane Brunner",
     author_email="stephane.brunner@camptocamp.com",
@@ -45,4 +46,5 @@ setup(
     install_requires=install_requires,
     setup_requires=setup_requires,
     tests_require=tests_require,
+    package_data={"sphinx-prompt": ["py.typed"]},
 )
