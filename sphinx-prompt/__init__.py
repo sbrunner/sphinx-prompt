@@ -40,7 +40,7 @@ class PromptCache:
             )
 
     def get_prompt_class(self, prompt: str) -> str:
-        return "prompt{}".format(self.prompts[prompt])
+        return f"prompt{self.prompts[prompt]}"
 
 
 _cache = PromptCache()
