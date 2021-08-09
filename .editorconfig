@@ -10,17 +10,8 @@ trim_trailing_whitespace = true
 max_line_length = 110
 quote_type = single
 
-[*.js]
-indent_size = 2
-
-[*.yaml]
-indent_size = 2
-
-[*.yml]
+[*.{js,yaml,yml,md}]
 indent_size = 2
 
 [Makefile]
-indent_style = tab
-
-[*.mk]
 indent_style = tab
