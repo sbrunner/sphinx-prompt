@@ -5,6 +5,9 @@ on:
   push:
   pull_request:
 
+env:
+  HAS_SECRETS: ${{ secrets.HAS_SECRETS }}
+
 jobs:
   build:
     name: Continuous integration
@@ -26,3 +29,13 @@ jobs:
       - run: pipenv run pytest
       - run: mv sphinx-prompt sphinx_prompt
       - run: pipenv run prospector --output=pylint sphinx_prompt
+      - run: mv sphinx_prompt sphinx-prompt
+
+      - name: Login to pypi
+        run: |
+          echo "[pypi]" > ~/.pypirc
+          echo "username = sbrunner" >> ~/.pypirc
+          echo "password = ${{ secrets.PYPI_PASSWORD }}" >> ~/.pypirc
+        if: env.HAS_SECRETS == 'HAS_SECRETS'
+      - name: Publish
+        run: c2cciutils-publish

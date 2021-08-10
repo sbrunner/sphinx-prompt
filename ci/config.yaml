@@ -9,3 +9,7 @@ checks:
   codespell:
     ignore_re:
       - CHANGELOG\.md
+
+publish:
+  docker:
+    images: []
