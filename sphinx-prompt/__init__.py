@@ -6,7 +6,7 @@ from typing import Any, Dict, List
 import sphinx.application
 from docutils import nodes
 from docutils.parsers import rst
-from docutils.parsers.rst import directives
+from docutils.parsers.rst import directives  # type: ignore
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import BashLexer, BatchLexer, PowerShellLexer, PythonLexer, ScalaLexer, TextLexer
@@ -58,7 +58,7 @@ LEXERS = {
 }
 
 
-class PromptDirective(rst.Directive):  # type: ignore
+class PromptDirective(rst.Directive):
 
     optional_arguments = 3
     option_spec = {
