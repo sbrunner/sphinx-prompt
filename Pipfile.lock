@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "adf955b9db9a3f031d349e128a86cfd07e44f4b12a4409dd6d2ff147036df00b"
+            "sha256": "add2b16bb7e8ae92ab68f39fe761049dc171849c1a02fa97878f90163cd008f5"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -449,10 +449,11 @@
                 "with_mypy"
             ],
             "hashes": [
-                "sha256:fd3731e1b2b20833c5eeda62206b8aadf0f64b1b5b3199edd8c80fb80081ee95"
+                "sha256:d0befb6148c78e7cfcfae32d2f6daf80a15d2b2bfe730f1e9d3af1742579a530",
+                "sha256:d5ef79c0b62e18d7aee78a72073f76017becf303c82b77fa5c8e1ac9c2818a80"
             ],
             "index": "pypi",
-            "version": "==1.4.0"
+            "version": "==1.5.0.1"
         },
         "py": {
             "hashes": [
@@ -502,10 +503,10 @@
         },
         "pylint-django": {
             "hashes": [
-                "sha256:b7756844dba0cecd3471056a1ef4154439defedaba38bf3ced9f848d2bf6297c",
-                "sha256:ca32277c77878dd3c2d9e75f3f3f7f0c0712f053f10ff1b946cdc27367a6c911"
+                "sha256:aff49d9602a39c027b4ed7521a041438893205918f405800063b7ff692b7371b",
+                "sha256:f63f717169b0c2e4e19c28f1c32c28290647330184fcb7427805ae9b6994f3fc"
             ],
-            "version": "==2.1.0"
+            "version": "==2.4.4"
         },
         "pylint-flask": {
             "hashes": [
@@ -632,11 +633,11 @@
         },
         "typing-extensions": {
             "hashes": [
-                "sha256:0ac0f89795dd19de6b97debb0c6af1c70987fd80a2d62d1958f7e56fcc31b497",
-                "sha256:50b6f157849174217d0656f99dc82fe932884fb250826c18350e159ec6cdf342",
-                "sha256:779383f6086d90c99ae41cf0ff39aac8a7937a9283ce0a414e5dd782f4c94a84"
+                "sha256:045dd532231acfa03628df5e0c66dba64e2cc8fc8b844538d4ad6d5dd6cb82dc",
+                "sha256:83af6730a045fda60f46510f7f1f094776d90321caa4d97d20ef38871bef4bd3",
+                "sha256:8bbffbd37fbeb9747a0241fdfde5ae99d4531ad1d1a41ccaea62100e15a5814c"
             ],
-            "version": "==3.10.0.0"
+            "version": "==3.10.0.1"
         },
         "wrapt": {
             "hashes": [
