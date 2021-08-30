@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# pylint: disable=invalid-name
 
 from typing import Any, Dict, List
 
