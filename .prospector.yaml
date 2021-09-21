@@ -13,6 +13,7 @@ pylint:
     - no-else-return
     - too-many-branches
     - too-many-statements
+    - too-many-locals
 
 bandit:
   run: true

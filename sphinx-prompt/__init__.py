@@ -31,12 +31,10 @@ class PromptCache:
             index = self.next_index
             self.next_index = index + 1
             self.prompts[prompt] = index
-            return """span.prompt{}:before {{
-  content: "{} ";
+            return f"""span.prompt{index}:before {{
+  content: "{prompt} ";
 }}
-""".format(
-                index, prompt
-            )
+"""
 
     def get_prompt_class(self, prompt: str) -> str:
         return f"prompt{self.prompts[prompt]}"
@@ -114,12 +112,10 @@ class PromptDirective(rst.Directive):
                 for prompt in prompts:
                     if line.startswith(prompt):
                         if len(statement) > 0:
-                            html += '<span class="{}">{}</span>\n'.format(
-                                prompt_class,
-                                highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip(
-                                    "\r\n"
-                                ),
-                            )
+                            highlighted_line = highlight(
+                                "\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)
+                            ).strip("\r\n")
+                            html += f'<span class="{prompt_class}">{highlighted_line}</span>\n'
                             statement = []
                         line = line[len(prompt) + 1 :].rstrip()
                         prompt_class = _cache.get_prompt_class(prompt)
@@ -128,29 +124,28 @@ class PromptDirective(rst.Directive):
                 statement.append(line)
             # Add last prompt
             if len(statement) > 0:
-                html += '<span class="{}">{}</span>\n'.format(
-                    prompt_class,
-                    highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip("\r\n"),
+                highlighted_line = highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip(
+                    "\r\n"
                 )
+                html += f'<span class="{prompt_class}">{highlighted_line}</span>\n'
         elif language in ["bash", "python"]:
             for line in self.content:
                 statement.append(line)
+                highlighted_line = highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip(
+                    "\r\n"
+                )
                 if len(line) == 0 or not line[-1] == "\\":
-                    html += '<span class="{}">{}</span>\n'.format(
-                        _cache.get_prompt_class(prompt),
-                        highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip("\r\n"),
-                    )
+                    html += f'<span class="{_cache.get_prompt_class(prompt)}">{highlighted_line}</span>\n'
                     if prompt is not None:
-                        latex += "\n{} {}".format(prompt, "\n".join(statement))
+                        statements = "\n".join(statement)
+                        latex += f"\n{prompt} {statements}"
                     else:
                         latex += "\n" + "\n".join(statement)
                     statement = []
         else:
             for line in self.content:
-                html += '<span class="{}">{}</span>\n'.format(
-                    _cache.get_prompt_class(prompt),
-                    highlight(line, Lexer(), HtmlFormatter(nowrap=True)).strip("\r\n"),
-                )
+                highlighted_line = highlight(line, Lexer(), HtmlFormatter(nowrap=True)).strip("\r\n")
+                html += f'<span class="{_cache.get_prompt_class(prompt)}">{highlighted_line}</span>\n'
                 if prompt is not None:
                     latex += f"\n{prompt} {line}"
                 else:
