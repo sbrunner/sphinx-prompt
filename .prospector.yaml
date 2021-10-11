@@ -1,10 +1,17 @@
 ---
 strictness: veryhigh
+max-line-length: 110
+doc-warnings: True
 
 pep8:
   disable:
     - E501 # line too long
     - E203 # whitespace before ':'
+
+pep257:
+  disable:
+    - D104 # Missing docstring in public package
+    - D203 # 1 blank line required before class docstring (found 0)
 
 pylint:
   disable:
@@ -14,6 +21,7 @@ pylint:
     - too-many-branches
     - too-many-statements
     - too-many-locals
+    - missing-module-docstring
 
 bandit:
   run: true
