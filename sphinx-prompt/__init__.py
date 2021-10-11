@@ -15,16 +15,21 @@ logger = logging.getLogger(__name__)
 
 
 class PromptCache:
+    """The cache of different prompt."""
+
     def __init__(self) -> None:
+        """Initialize."""
         self.next_index = 1
         self.prompts: Dict[str, int] = {}
 
     def clear(self, *args: Any) -> None:
+        """Clear all cache."""
         del args
         self.next_index = 1
         self.prompts = {}
 
     def register_prompt(self, prompt: str) -> str:
+        """Initialize the prompts."""
         if prompt in self.prompts:
             return ""
         else:
@@ -37,6 +42,7 @@ class PromptCache:
 """
 
     def get_prompt_class(self, prompt: str) -> str:
+        """Get the CSS class name."""
         return f"prompt{self.prompts[prompt]}"
 
 
@@ -56,6 +62,7 @@ LEXERS = {
 
 
 class PromptDirective(rst.Directive):
+    """The prompt directive."""
 
     optional_arguments = 3
     option_spec = {
@@ -66,6 +73,7 @@ class PromptDirective(rst.Directive):
     has_content = True
 
     def run(self) -> List[nodes.raw]:
+        """Run the directive."""
         self.assert_has_content()
 
         arg_count = len(self.arguments)
@@ -161,6 +169,7 @@ class PromptDirective(rst.Directive):
 
 
 def setup(app: sphinx.application.Sphinx) -> Dict[str, bool]:
+    """Register the plugin."""
     app.add_directive("prompt", PromptDirective)
     app.connect("env-purge-doc", _cache.clear)
     return {
