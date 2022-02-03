@@ -9,7 +9,7 @@ sphinx-prompt = {editable = true, path = "."}
 [dev-packages]
 pytest = "==6.2.5"
 prospector = {extras = ["with_mypy", "with_bandit"], version = "==1.6.0"}
-types-docutils = "==0.17.4"
+types-docutils = "==0.17.5"
 
 [requires]
 python_version = "3.8"
