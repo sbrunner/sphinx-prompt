@@ -7,7 +7,7 @@ name = "pypi"
 sphinx-prompt = {editable = true, path = "."}
 
 [dev-packages]
-pytest = "==7.0.0"
+pytest = "==7.0.1"
 prospector = {extras = ["with_mypy", "with_bandit"], version = "==1.6.0"}
 types-docutils = "==0.17.5"
 
