@@ -5,7 +5,7 @@ from typing import Any, Dict, List
 import sphinx.application
 from docutils import nodes
 from docutils.parsers import rst
-from docutils.parsers.rst import directives  # type: ignore
+from docutils.parsers.rst import directives
 from pygments import highlight
 from pygments.formatters import HtmlFormatter
 from pygments.lexers import BashLexer, BatchLexer, PowerShellLexer, PythonLexer, ScalaLexer, TextLexer
