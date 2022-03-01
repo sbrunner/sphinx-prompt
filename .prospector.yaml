@@ -3,7 +3,7 @@ strictness: veryhigh
 max-line-length: 110
 doc-warnings: True
 
-pep8:
+pycodestyle:
   disable:
     - E501 # line too long
     - E203 # whitespace before ':'
