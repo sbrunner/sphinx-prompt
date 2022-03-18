@@ -13,3 +13,4 @@ checks:
 publish:
   docker:
     images: []
+    dispatch: false
