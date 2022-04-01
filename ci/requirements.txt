@@ -1,2 +1,2 @@
-c2cciutils==1.2.dev20220317100006
+c2cciutils==1.2.dev20220331120018
 pipfile==0.0.2
