@@ -8,7 +8,8 @@ checks:
     audit.yaml: False
   codespell:
     ignore_re:
-      - CHANGELOG\.md
+      - ^CHANGELOG\.md$
+      - ^poetry\.lock$
 
 publish:
   docker:

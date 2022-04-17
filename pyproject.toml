@@ -1,3 +1,19 @@
 [tool.black]
 line-length = 110
 target-version = ['py38']
+
+[tool.poetry]
+name = 'sphinx-prompt'
+version = '0.0.0'
+description = 'Not used'
+authors = []
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.11"
+Sphinx = "==4.4.*"
+pygments = "==2.11.*"
+
+[tool.poetry.dev-dependencies]
+prospector = {version = "==1.7.*", extras = ["with_bandit", "with_mypy"]}
+pytest = "==7.1.*"
+types-docutils = "==0.18.*"
