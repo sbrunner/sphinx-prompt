@@ -10,7 +10,7 @@ authors = []
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
-Sphinx = "==4.4.*"
+Sphinx = "==4.5.*"
 pygments = "==2.11.*"
 
 [tool.poetry.dev-dependencies]
