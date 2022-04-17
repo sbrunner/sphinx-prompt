@@ -89,10 +89,10 @@ Run tests and prospector
 
 .. code::
 
-    python3 -m pip install --user --upgrade pipenv
-    pipenv sync --dev
-    pipenv run pytest
-    pipenv run prospector
+    python3 -m pip install --user --upgrade poetry
+    poetry install
+    poetry run pytest
+    poetry run prospector
 
 The code should be formatted with ``black`` add ``isort``.
 

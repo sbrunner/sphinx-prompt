@@ -1,6 +1,6 @@
 import pytest
 
-sphinx_prompt = __import__("sphinx-prompt")
+sphinx_prompt = __import__("sphinx_prompt")
 
 testdata = [
     [

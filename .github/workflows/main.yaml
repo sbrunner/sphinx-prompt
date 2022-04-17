@@ -25,11 +25,9 @@ jobs:
         run: c2cciutils-checks
 
       - run: python3 -m pip install --user --requirement=requirements.txt
-      - run: pipenv sync --dev
-      - run: pipenv run pytest
-      - run: mv sphinx-prompt sphinx_prompt
-      - run: pipenv run prospector --output=pylint sphinx_prompt
-      - run: mv sphinx_prompt sphinx-prompt
+      - run: poetry install
+      - run: poetry run pytest
+      - run: poetry run prospector --output=pylint sphinx_prompt
 
       - name: Login to pypi
         run: |
