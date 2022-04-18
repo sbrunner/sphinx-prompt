@@ -2,9 +2,9 @@
   extends: ['config:base', 'schedule:earlyMondays'],
   lockFileMaintenance: { enabled: true },
   packageRules: [
-    /** Automerge the patch, the minor and the dev dependency */
+    /** Automerge the patch, the minor and the dev dependency and lockFileMaintenance */
     {
-      matchDepTypes: ['devDependencies'],
+      matchDepTypes: ['devDependencies', 'lockFileMaintenance'],
       automerge: true,
     },
     /** Group the patch and the minor */
