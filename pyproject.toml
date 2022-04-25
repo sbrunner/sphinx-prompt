@@ -11,7 +11,7 @@ authors = []
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
 Sphinx = "==4.5.*"
-pygments = "==2.11.*"
+pygments = "==2.12.*"
 
 [tool.poetry.dev-dependencies]
 prospector = {version = "==1.7.*", extras = ["with_bandit", "with_mypy"]}
