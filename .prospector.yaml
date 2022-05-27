@@ -8,7 +8,7 @@ pycodestyle:
     - E501 # line too long
     - E203 # whitespace before ':'
 
-pep257:
+pydocstyle:
   disable:
     - D104 # Missing docstring in public package
     - D203 # 1 blank line required before class docstring (found 0)
@@ -28,6 +28,9 @@ bandit:
   run: true
 
 mypy:
+  run: true
+
+pyroma:
   run: true
 
 mccabe:
