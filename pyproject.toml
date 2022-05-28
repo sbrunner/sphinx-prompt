@@ -1,19 +1,72 @@
 [tool.black]
 line-length = 110
-target-version = ['py38']
+target-version = ["py38"]
+
+[tool.mypy]
+python_version = 3.8
+ignore_missing_imports = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_return_any = true
+strict = true
 
 [tool.poetry]
-name = 'sphinx-prompt'
-version = '0.0.0'
-description = 'Not used'
-authors = []
+name = "sphinx-prompt"
+version = "1.5.0"
+description = "Sphinx directive to add unselectable prompt"
+readme = "README.rst"
+authors = ["Stéphane Brunner <stephane.brunner@gmail.com>"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Plugins",
+    "Environment :: Web Environment",
+    "Framework :: Sphinx :: Extension",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: BSD License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3.6",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Topic :: Documentation :: Sphinx",
+    "Topic :: Documentation",
+    "Topic :: Software Development :: Documentation",
+    "Typing :: Typed",
+]
+homepage = "https://hub.docker.com/r/sbrunner/sphinx-prompt/"
+repository = "https://github.com/sbrunner/sphinx-prompt"
+license = "BSD"
+keywords = ["sphinx", "shell", "prompt"]
+packages = [{ include = "sphinx_prompt" }, { include = "sphinx_prompt/py.typed" }]
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
-Sphinx = "==4.5.*"
-pygments = "==2.12.*"
+Sphinx = "4.5.0"
+pygments = "2.12.0"
 
 [tool.poetry.dev-dependencies]
-prospector = {version = "==1.7.*", extras = ["with_bandit", "with_mypy"]}
-pytest = "==7.1.*"
-types-docutils = "==0.18.*"
+prospector = { version = "1.7.7", extras = [
+    "with_bandit",
+    "with_mypy",
+    "with_pyroma"
+] }
+pytest = "7.1.2"
+types-docutils = "0.18.3"
+
+[build-system]
+requires = [
+    "poetry-core>=1.0.0",
+    "poetry-plugin-tweak-dependencies-version",
+    "poetry-dynamic-versioning"
+]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry-plugin-tweak-dependencies-version]
+default = "present"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+vcs = "git"
+style = "semver"
+pattern = "^((?P<epoch>\\d+)!)?(?P<base>\\d+(\\.\\d+)*)"

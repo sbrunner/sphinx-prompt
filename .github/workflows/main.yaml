@@ -23,6 +23,10 @@ jobs:
 
       - name: Checks
         run: c2cciutils-checks
+      - name: GitHub event
+        run: echo ${GITHUB_EVENT} | python3 -m json.tool
+        env:
+          GITHUB_EVENT: ${{ toJson(github) }}
 
       - run: python3 -m pip install --user --requirement=requirements.txt
       - run: poetry install
