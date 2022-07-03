@@ -99,14 +99,7 @@ The code should be formatted with ``black`` add ``isort``.
 Create new release
 ------------------
 
-Update the version in `setup.cfg`.
-
 .. code::
 
-    python3 -m pip install --user --upgrade git-changelog
-    git-changelog . > CHANGELOG.md
-    git add setup.cfg CHANGELOG.md
-    git commit -m "Do the release <version>"
     git tag <version>
     git push origin <version>
-    git push
