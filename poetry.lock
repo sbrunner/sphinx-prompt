@@ -791,7 +791,7 @@ python-versions = ">=3.6,<4.0"
 
 [[package]]
 name = "types-docutils"
-version = "0.18.3"
+version = "0.19.0"
 description = "Typing stubs for docutils"
 category = "dev"
 optional = false
@@ -841,7 +841,7 @@ testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytest-
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<3.11"
-content-hash = "d6610644b2c96faa19413f3cde864d4c1789afb46130c427eee9d2bd00578cf8"
+content-hash = "0daa61c430d5089edb6a3962fce10c7f2b9c56a87cf4c40eb806b14c1b80bbc9"
 
 [metadata.files]
 alabaster = [
@@ -1230,8 +1230,8 @@ tomlkit = [
     {file = "tomlkit-0.11.1.tar.gz", hash = "sha256:61901f81ff4017951119cd0d1ed9b7af31c821d6845c8c477587bbdcd5e5854e"},
 ]
 types-docutils = [
-    {file = "types-docutils-0.18.3.tar.gz", hash = "sha256:a0ef831dc20635f350fa9cff591231c31d27e75771e59fd6c979b6c0c7e03292"},
-    {file = "types_docutils-0.18.3-py3-none-any.whl", hash = "sha256:b54b6fd599914093a5aab08dbf1cba96eb107cdeb4210bbe4ccd233fe3a71d9b"},
+    {file = "types-docutils-0.19.0.tar.gz", hash = "sha256:94936b1961aacda61ec6bb0acf1169cd7830b5230b645855c1d4789baf19685e"},
+    {file = "types_docutils-0.19.0-py3-none-any.whl", hash = "sha256:198ed1c0ef6c1a79411da9e1745514eda433d37770e24f26b0e13a302904cc97"},
 ]
 typing-extensions = [
     {file = "typing_extensions-4.3.0-py3-none-any.whl", hash = "sha256:25642c956049920a5aa49edcdd6ab1e06d7e5d467fc00e0506c44ac86fbfca02"},
