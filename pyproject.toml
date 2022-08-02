@@ -53,6 +53,8 @@ prospector = { version = "1.7.7", extras = [
 ] }
 pytest = "7.1.2"
 types-docutils = "0.19.0"
+pyflakes = "2.4.0"
+flake8 = "4.0.1"
 
 [build-system]
 requires = [
