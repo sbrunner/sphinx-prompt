@@ -3,7 +3,7 @@ Sphinx Prompt
 
 .. contents:: Table of contents
 
-Initialise
+Initialize
 ----------
 
 In ``conf.py`` add ``extensions += ['sphinx-prompt']``.
