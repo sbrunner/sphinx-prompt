@@ -670,7 +670,7 @@ python-versions = "*"
 
 [[package]]
 name = "Sphinx"
-version = "5.2.0"
+version = "5.2.3"
 description = "Python documentation generator"
 category = "main"
 optional = false
@@ -697,7 +697,7 @@ sphinxcontrib-serializinghtml = ">=1.1.5"
 
 [package.extras]
 docs = ["sphinxcontrib-websupport"]
-lint = ["docutils-stubs", "flake8 (>=3.5.0)", "flake8-bugbear", "flake8-comprehensions", "flake8-simplify", "isort", "mypy (>=0.971)", "sphinx-lint", "types-requests", "types-typed-ast"]
+lint = ["docutils-stubs", "flake8 (>=3.5.0)", "flake8-bugbear", "flake8-comprehensions", "flake8-simplify", "isort", "mypy (>=0.981)", "sphinx-lint", "types-requests", "types-typed-ast"]
 test = ["cython", "html5lib", "pytest (>=4.6)", "typed_ast"]
 
 [[package]]
@@ -869,7 +869,7 @@ testing = ["func-timeout", "jaraco.itertools", "pytest (>=6)", "pytest-black (>=
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.8,<3.11"
-content-hash = "162e9b2d80a29c40a283dd36a1439653f5510cf54fef95032e443e966c479abd"
+content-hash = "331f40b10e1dd01d43490e16b950c12b9fdfdd65d03b68998ac2f5f4293952ae"
 
 [metadata.files]
 alabaster = [
@@ -1226,8 +1226,8 @@ snowballstemmer = [
     {file = "snowballstemmer-2.2.0.tar.gz", hash = "sha256:09b16deb8547d3412ad7b590689584cd0fe25ec8db3be37788be3810cbf19cb1"},
 ]
 Sphinx = [
-    {file = "Sphinx-5.2.0.tar.gz", hash = "sha256:1790c2098937dcfa7871c9d102c24eccd4a8b883b67c5c1e26892fb52d102542"},
-    {file = "sphinx-5.2.0-py3-none-any.whl", hash = "sha256:422812bdf2dacab55c47ee4dd4746bb82e739fe4c97ce16dd68bcc208e348e73"},
+    {file = "Sphinx-5.2.3.tar.gz", hash = "sha256:5b10cb1022dac8c035f75767799c39217a05fc0fe2d6fe5597560d38e44f0363"},
+    {file = "sphinx-5.2.3-py3-none-any.whl", hash = "sha256:7abf6fabd7b58d0727b7317d5e2650ef68765bbe0ccb63c8795fa8683477eaa2"},
 ]
 sphinxcontrib-applehelp = [
     {file = "sphinxcontrib-applehelp-1.0.2.tar.gz", hash = "sha256:a072735ec80e7675e3f432fcae8610ecf509c5f1869d17e2eecff44389cdbc58"},
