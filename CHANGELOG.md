@@ -49,13 +49,13 @@
 
 #### :sparkles: Enhancements
 
-- Allow to configure the prompt using options [\#67](https://github.com/sbrunner/sphinx-prompt/pull/67) ([jack1142](https://github.com/jack1142))
-- Add `batch` and `powershell` languages [\#66](https://github.com/sbrunner/sphinx-prompt/pull/66) ([jack1142](https://github.com/jack1142))
+- Allow to configure the prompt using options [\#67](https://github.com/sbrunner/sphinx-prompt/pull/67) ([Jackenmen](https://github.com/Jackenmen))
+- Add `batch` and `powershell` languages [\#66](https://github.com/sbrunner/sphinx-prompt/pull/66) ([Jackenmen](https://github.com/Jackenmen))
 
 #### :bug: Bug Fixes
 
-- Fix warning when mixing positional args and options [\#70](https://github.com/sbrunner/sphinx-prompt/pull/70) ([jack1142](https://github.com/jack1142))
-- Fix additional spaces after the prompt when using multiple [\#69](https://github.com/sbrunner/sphinx-prompt/pull/69) ([jack1142](https://github.com/jack1142))
+- Fix warning when mixing positional args and options [\#70](https://github.com/sbrunner/sphinx-prompt/pull/70) ([Jackenmen](https://github.com/Jackenmen))
+- Fix additional spaces after the prompt when using multiple [\#69](https://github.com/sbrunner/sphinx-prompt/pull/69) ([Jackenmen](https://github.com/Jackenmen))
 
 #### :package: Dependencies update
 
