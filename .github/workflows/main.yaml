@@ -29,6 +29,9 @@ jobs:
 
       - name: Checks
         run: c2cciutils-checks
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+
       - name: GitHub event
         run: echo ${GITHUB_EVENT} | python3 -m json.tool
         env:
@@ -47,3 +50,5 @@ jobs:
         if: env.HAS_SECRETS == 'HAS_SECRETS'
       - name: Publish
         run: c2cciutils-publish
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
