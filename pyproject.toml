@@ -25,7 +25,6 @@ classifiers = [
     "License :: OSI Approved :: BSD License",
     "Operating System :: OS Independent",
     "Programming Language :: Python",
-    "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
     "Programming Language :: Python :: 3.9",
@@ -41,9 +40,9 @@ keywords = ["sphinx", "shell", "prompt"]
 packages = [{ include = "sphinx_prompt" }, { include = "sphinx_prompt/py.typed" }]
 
 [tool.poetry.dependencies]
-python = ">=3.8,<3.11"
+python = ">=3.7,<3.11"
 Sphinx = "5.3.0"
-pygments = "2.13.0"
+pygments = "2.14.0"
 docutils = "0.19"
 
 [tool.poetry.group.dev.dependencies]

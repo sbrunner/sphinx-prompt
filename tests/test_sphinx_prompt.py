@@ -26,7 +26,7 @@ span.prompt1:before {
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">one line</span>
+</style><span class="prompt1">one<span class="w"> </span>line</span>
 </pre></div></div>""",
     ],
     [
@@ -37,7 +37,7 @@ span.prompt1:before {
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">one line</span>
+</style><span class="prompt1">one<span class="w"> </span>line</span>
 </pre></div></div>""",
     ],
     [
@@ -60,7 +60,7 @@ span.prompt1:before {
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">one split <span class="se">\\</span>
+</style><span class="prompt1">one<span class="w"> </span>split<span class="w"> </span><span class="se">\\</span>
 line</span>
 </pre></div></div>""",
     ],
@@ -72,7 +72,7 @@ line</span>
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">mixed split <span class="se">\\</span>
+</style><span class="prompt1">mixed<span class="w"> </span>split<span class="w"> </span><span class="se">\\</span>
 line</span>
 <span class="prompt1">second</span>
 </pre></div></div>""",
@@ -85,7 +85,7 @@ line</span>
 span.prompt1:before {
   content: "% ";
 }
-</style><span class="prompt1">other prompt</span>
+</style><span class="prompt1">other<span class="w"> </span>prompt</span>
 </pre></div></div>""",
     ],
     [
@@ -96,7 +96,7 @@ span.prompt1:before {
 span.prompt1:before {
   content: "% ";
 }
-</style><span class="prompt1">other prompt opt</span>
+</style><span class="prompt1">other<span class="w"> </span>prompt<span class="w"> </span>opt</span>
 </pre></div></div>""",
     ],
     [
@@ -129,7 +129,7 @@ span.prompt1:before {
 span.prompt1:before {
   content: "$ ";
 }
-</style><span class="prompt1">lexer <span class="m">1</span> <span class="m">2</span> <span class="s2">&quot;tree&quot;</span></span>
+</style><span class="prompt1">lexer<span class="w"> </span><span class="m">1</span><span class="w"> </span><span class="m">2</span><span class="w"> </span><span class="s2">&quot;tree&quot;</span></span>
 </pre></div></div>""",
     ],
     [
