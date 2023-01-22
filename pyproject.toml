@@ -35,7 +35,7 @@ classifiers = [
 ]
 homepage = "https://hub.docker.com/r/sbrunner/sphinx-prompt/"
 repository = "https://github.com/sbrunner/sphinx-prompt"
-license = "BSD"
+license = "BSD-3-Clause"
 keywords = ["sphinx", "shell", "prompt"]
 packages = [{ include = "sphinx_prompt" }, { include = "sphinx_prompt/py.typed" }]
 
