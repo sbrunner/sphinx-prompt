@@ -856,14 +856,14 @@ test = ["flit (>=3.4,<4)", "pytest", "pytest-cov", "setuptools (>=60)", "zest.re
 
 [[package]]
 name = "pytest"
-version = "7.2.0"
+version = "7.2.1"
 description = "pytest: simple powerful testing with Python"
 category = "dev"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "pytest-7.2.0-py3-none-any.whl", hash = "sha256:892f933d339f068883b6fd5a459f03d85bfcb355e4981e146d2c7616c21fef71"},
-    {file = "pytest-7.2.0.tar.gz", hash = "sha256:c4014eb40e10f11f355ad4e3c2fb2c6c6d1919c73f3b5a433de4708202cade59"},
+    {file = "pytest-7.2.1-py3-none-any.whl", hash = "sha256:c7c6ca206e93355074ae32f7403e8ea12163b1163c976fee7d4d84027c162be5"},
+    {file = "pytest-7.2.1.tar.gz", hash = "sha256:d45e0952f3727241918b8fd0f376f5ff6b301cc0777c6f9a556935c92d8a7d42"},
 ]
 
 [package.dependencies]
@@ -1220,14 +1220,14 @@ files = [
 
 [[package]]
 name = "types-docutils"
-version = "0.19.1.1"
+version = "0.19.1.2"
 description = "Typing stubs for docutils"
 category = "dev"
 optional = false
 python-versions = "*"
 files = [
-    {file = "types-docutils-0.19.1.1.tar.gz", hash = "sha256:be0a51ba1c7dd215d9d2df66d6845e63c1009b4bbf4c5beb87a0d9745cdba962"},
-    {file = "types_docutils-0.19.1.1-py3-none-any.whl", hash = "sha256:a024cada35f0c13cc45eb0b68a102719018a634013690b7fef723bcbfadbd1f1"},
+    {file = "types-docutils-0.19.1.2.tar.gz", hash = "sha256:ca3d2135484adb52dd042bbddbd6eddcbbda8c608ba3f5e5f908bd548ffcb399"},
+    {file = "types_docutils-0.19.1.2-py3-none-any.whl", hash = "sha256:7be44dac1b160901308ac43762d5e89175105ed682092a3a1f08911d2573a470"},
 ]
 
 [[package]]
@@ -1367,4 +1367,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.11"
-content-hash = "05cb502d7094f2153d3cc5d072e08f3be755eb71fd2c78f60cdd6125cb42afcb"
+content-hash = "bf5a55ad6bd4e6e51072084e40309bdda2245af697f2f1aebb1c5a0eb770dec9"
