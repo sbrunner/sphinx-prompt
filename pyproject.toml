@@ -48,7 +48,7 @@ docutils = "0.19"
 [tool.poetry.group.dev.dependencies]
 prospector = { version = "1.8.4", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
 pytest = "7.2.1"
-types-docutils = "0.19.1.2"
+types-docutils = "0.19.1.6"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-plugin-tweak-dependencies-version", "poetry-dynamic-versioning"]
