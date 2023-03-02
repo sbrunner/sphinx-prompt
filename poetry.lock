@@ -736,14 +736,14 @@ files = [
 
 [[package]]
 name = "prospector"
-version = "1.8.4"
+version = "1.9.0"
 description = "Prospector is a tool to analyse Python code by aggregating the result of other tools."
 category = "dev"
 optional = false
-python-versions = ">=3.7,<4.0"
+python-versions = ">=3.7.2,<4.0"
 files = [
-    {file = "prospector-1.8.4-py3-none-any.whl", hash = "sha256:4a9584544cf8d118574567a669b85456d036444597f0664185263e229055cdf6"},
-    {file = "prospector-1.8.4.tar.gz", hash = "sha256:60db5b6046a523248a1b32fb2daa8080d3f406da822ad95cff8cd9f153e04555"},
+    {file = "prospector-1.9.0-py3-none-any.whl", hash = "sha256:c24011019e48b54745dc0f5d3d25e9d6b19750129996c134253c2f1eed9d45ac"},
+    {file = "prospector-1.9.0.tar.gz", hash = "sha256:599f31516f857d785058773875e9358702ad653e65461e8cad44134d8ee17b1f"},
 ]
 
 [package.dependencies]
@@ -753,7 +753,7 @@ flake8 = "<6.0.0"
 GitPython = ">=3.1.27,<4.0.0"
 mccabe = ">=0.7.0,<0.8.0"
 mypy = {version = ">=0.600", optional = true, markers = "extra == \"with_mypy\" or extra == \"with_everything\""}
-packaging = "<22.0"
+packaging = "*"
 pep8-naming = ">=0.3.3,<=0.10.0"
 pycodestyle = ">=2.9.0"
 pydocstyle = ">=2.0.0"
@@ -1505,4 +1505,4 @@ testing = ["flake8 (<5)", "func-timeout", "jaraco.functools", "jaraco.itertools"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.11"
-content-hash = "0ee904690c3e1dfe3978bce79d94523c0e663201e66c26123d2129bc5bfe696e"
+content-hash = "9681397afb2c10595f2aa4812a15068173fdf7d661efd1e57411a6644641ff79"
