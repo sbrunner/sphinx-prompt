@@ -46,7 +46,7 @@ pygments = "2.14.0"
 docutils = "0.19"
 
 [tool.poetry.group.dev.dependencies]
-prospector = { version = "1.8.4", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
+prospector = { version = "1.9.0", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
 pytest = "7.2.1"
 types-docutils = "0.19.1.6"
 
