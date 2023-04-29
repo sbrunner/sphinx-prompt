@@ -4,7 +4,7 @@ import docutils.statemachine
 import docutils.utils
 import pytest
 
-sphinx_prompt = __import__("sphinx_prompt")
+sphinx_prompt = __import__("sphinx-prompt")
 
 testdata = [
     [
