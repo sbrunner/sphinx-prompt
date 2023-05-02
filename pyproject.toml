@@ -41,7 +41,7 @@ packages = [{ include = "sphinx_prompt" }, { include = "sphinx_prompt/py.typed" 
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
-Sphinx = "6.2.1"
+Sphinx = "7.0.0"
 pygments = "2.15.1"
 docutils = "0.19"
 
