@@ -218,14 +218,14 @@ graph = ["objgraph (>=1.7.2)"]
 
 [[package]]
 name = "docutils"
-version = "0.19"
+version = "0.20.1"
 description = "Docutils -- Python Documentation Utilities"
 category = "main"
 optional = false
 python-versions = ">=3.7"
 files = [
-    {file = "docutils-0.19-py3-none-any.whl", hash = "sha256:5e1de4d849fee02c63b040a4a3fd567f4ab104defd8a5511fbbc24a8a017efbc"},
-    {file = "docutils-0.19.tar.gz", hash = "sha256:33995a6753c30b7f577febfc2c50411fec6aac7f7ffeb7c4cfe5991072dcf9e6"},
+    {file = "docutils-0.20.1-py3-none-any.whl", hash = "sha256:96f387a2c5562db4476f09f13bbab2192e764cac08ebbf3a34a95d9b1e4a59d6"},
+    {file = "docutils-0.20.1.tar.gz", hash = "sha256:f08a4e276c3a1583a86dce3e34aba3fe04d02bba2dd51ed16106244e8a923e3b"},
 ]
 
 [[package]]
@@ -708,14 +708,14 @@ testing = ["pytest", "pytest-benchmark"]
 
 [[package]]
 name = "prospector"
-version = "1.9.0"
+version = "1.10.2"
 description = "Prospector is a tool to analyse Python code by aggregating the result of other tools."
 category = "dev"
 optional = false
 python-versions = ">=3.7.2,<4.0"
 files = [
-    {file = "prospector-1.9.0-py3-none-any.whl", hash = "sha256:c24011019e48b54745dc0f5d3d25e9d6b19750129996c134253c2f1eed9d45ac"},
-    {file = "prospector-1.9.0.tar.gz", hash = "sha256:599f31516f857d785058773875e9358702ad653e65461e8cad44134d8ee17b1f"},
+    {file = "prospector-1.10.2-py3-none-any.whl", hash = "sha256:3bfe103c28bb821cca84926ca31357fbfd32405e4bf8c34ca2e55885684557e4"},
+    {file = "prospector-1.10.2.tar.gz", hash = "sha256:cc8f09e79bdd32247edddf05b666940e88ad96338a84f5717b1e8c0678337821"},
 ]
 
 [package.dependencies]
@@ -737,14 +737,15 @@ pylint-flask = "0.6"
 pylint-plugin-utils = ">=0.7,<0.8"
 pyroma = {version = ">=2.4", optional = true, markers = "extra == \"with_pyroma\" or extra == \"with_everything\""}
 PyYAML = "*"
-requirements-detector = ">=1.0.3"
+requirements-detector = ">=1.2.0"
 setoptconf-tmp = ">=0.3.1,<0.4.0"
 toml = ">=0.10.2,<0.11.0"
 
 [package.extras]
 with-bandit = ["bandit (>=1.5.1)"]
-with-everything = ["bandit (>=1.5.1)", "mypy (>=0.600)", "pyroma (>=2.4)", "vulture (>=1.5)"]
+with-everything = ["bandit (>=1.5.1)", "mypy (>=0.600)", "pyright (>=1.1.3)", "pyroma (>=2.4)", "vulture (>=1.5)"]
 with-mypy = ["mypy (>=0.600)"]
+with-pyright = ["pyright (>=1.1.3)"]
 with-pyroma = ["pyroma (>=2.4)"]
 with-vulture = ["vulture (>=1.5)"]
 
@@ -1345,14 +1346,14 @@ files = [
 
 [[package]]
 name = "types-docutils"
-version = "0.19.1.9"
+version = "0.20.0.1"
 description = "Typing stubs for docutils"
 category = "dev"
 optional = false
 python-versions = "*"
 files = [
-    {file = "types-docutils-0.19.1.9.tar.gz", hash = "sha256:1d029567e67c52992fd42aa968778bc10a5e445c8450fc751d672d6f50330a4a"},
-    {file = "types_docutils-0.19.1.9-py3-none-any.whl", hash = "sha256:556fb7ee19248aa482caa142a830c940b776b0f8c7577a98abe0977574546a1d"},
+    {file = "types-docutils-0.20.0.1.tar.gz", hash = "sha256:f682b5459a1e6e28208742adb0be8573d1ecbddd442f00d202b0278c1c4418a2"},
+    {file = "types_docutils-0.20.0.1-py3-none-any.whl", hash = "sha256:6b17cbe57cb282158feb41d154cddaeabc16f1d6cff3c7308bd3056f42aa7cd2"},
 ]
 
 [[package]]
@@ -1488,4 +1489,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.11"
-content-hash = "eb741d9433a86ccc486aa58ea9334e4889559e261eb216e6d5f1726f5c0e723b"
+content-hash = "05eaf463127fc3bed97a8083ff7ecece16c337f53aa18bd337c8f473a4e71116"
