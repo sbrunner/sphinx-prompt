@@ -41,14 +41,14 @@ packages = [{ include = "sphinx_prompt" }, { include = "sphinx_prompt/py.typed" 
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.11"
-Sphinx = "7.0.0"
+Sphinx = "7.0.1"
 pygments = "2.15.1"
 docutils = "0.19"
 
 [tool.poetry.group.dev.dependencies]
 prospector = { version = "1.9.0", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
 pytest = "7.3.1"
-types-docutils = "0.19.1.8"
+types-docutils = "0.19.1.9"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-plugin-tweak-dependencies-version", "poetry-dynamic-versioning"]
