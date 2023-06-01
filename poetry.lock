@@ -1151,21 +1151,21 @@ files = [
 
 [[package]]
 name = "sphinx"
-version = "7.0.0"
+version = "7.0.1"
 description = "Python documentation generator"
 category = "main"
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "Sphinx-7.0.0.tar.gz", hash = "sha256:283c44aa28922bb4223777b44ac0d59af50a279ac7690dfe945bb2b9575dc41b"},
-    {file = "sphinx-7.0.0-py3-none-any.whl", hash = "sha256:3cfc1c6756ef1b132687b813ec6ea2214cb7a7e5d1dcb2772006cb895a0fa469"},
+    {file = "Sphinx-7.0.1.tar.gz", hash = "sha256:61e025f788c5977d9412587e733733a289e2b9fdc2fef8868ddfbfc4ccfe881d"},
+    {file = "sphinx-7.0.1-py3-none-any.whl", hash = "sha256:60c5e04756c1709a98845ed27a2eed7a556af3993afb66e77fec48189f742616"},
 ]
 
 [package.dependencies]
 alabaster = ">=0.7,<0.8"
 babel = ">=2.9"
 colorama = {version = ">=0.4.5", markers = "sys_platform == \"win32\""}
-docutils = ">=0.18.1,<0.20"
+docutils = ">=0.18.1,<0.21"
 imagesize = ">=1.3"
 importlib-metadata = {version = ">=4.8", markers = "python_version < \"3.10\""}
 Jinja2 = ">=3.0"
@@ -1345,14 +1345,14 @@ files = [
 
 [[package]]
 name = "types-docutils"
-version = "0.19.1.8"
+version = "0.19.1.9"
 description = "Typing stubs for docutils"
 category = "dev"
 optional = false
 python-versions = "*"
 files = [
-    {file = "types-docutils-0.19.1.8.tar.gz", hash = "sha256:975f8a78a2f422d8c6e776a09988e25565f54f7971a9384bbe8b004a1e3b0f90"},
-    {file = "types_docutils-0.19.1.8-py3-none-any.whl", hash = "sha256:008094d649bb728ff3736ff69b09cf62c04d651c577109ea4ae0f381621a7509"},
+    {file = "types-docutils-0.19.1.9.tar.gz", hash = "sha256:1d029567e67c52992fd42aa968778bc10a5e445c8450fc751d672d6f50330a4a"},
+    {file = "types_docutils-0.19.1.9-py3-none-any.whl", hash = "sha256:556fb7ee19248aa482caa142a830c940b776b0f8c7577a98abe0977574546a1d"},
 ]
 
 [[package]]
@@ -1488,4 +1488,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<3.11"
-content-hash = "3fb8dacdcb3470b71414ebf913ccaf0c90c9981dd7d13552995ffec4ad111e37"
+content-hash = "eb741d9433a86ccc486aa58ea9334e4889559e261eb216e6d5f1726f5c0e723b"
