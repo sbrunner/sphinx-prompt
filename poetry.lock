@@ -717,6 +717,17 @@ with-pyroma = ["pyroma (>=2.4)"]
 with-vulture = ["vulture (>=1.5)"]
 
 [[package]]
+name = "prospector-profile-duplicated"
+version = "0.1.0"
+description = "Profile that can be used to disable the duplicated or conflict rules between Prospector and other tools"
+optional = false
+python-versions = "*"
+files = [
+    {file = "prospector_profile_duplicated-0.1.0-py2.py3-none-any.whl", hash = "sha256:d9c8679736bb2f2310b0faec3f6955d63388abc594e293a3e82e43ae0315991c"},
+    {file = "prospector_profile_duplicated-0.1.0.tar.gz", hash = "sha256:144baaa10101a28834d68552ff0b1714c08f22c8a7e9506e02ccc8584a28943c"},
+]
+
+[[package]]
 name = "pycodestyle"
 version = "2.10.0"
 description = "Python style guide checker"
@@ -1421,4 +1432,4 @@ testing = ["big-O", "flake8 (<5)", "jaraco.functools", "jaraco.itertools", "more
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.8,<4.0"
-content-hash = "190810a69509a6e9a974988db2c8e5d8b4b97926149092ee2847caf797a0b8c0"
+content-hash = "a7be1d0da65993c41e51369a86400406269b583411bbeef55408b7ad32c7829f"
