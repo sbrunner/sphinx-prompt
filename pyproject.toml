@@ -49,6 +49,7 @@ docutils = "0.20.1"
 prospector = { version = "1.10.2", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
 pytest = "7.3.1"
 types-docutils = "0.20.0.1"
+prospector-profile-duplicated = "0.1.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-plugin-tweak-dependencies-version", "poetry-dynamic-versioning"]
