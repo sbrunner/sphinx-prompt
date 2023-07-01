@@ -1,4 +1,4 @@
 poetry==1.5.1
 poetry-plugin-tweak-dependencies-version==1.4.0
-poetry-dynamic-versioning==0.22.0
+poetry-dynamic-versioning==0.24.0
 pip==23.1.2
