@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from typing import Any, Dict, List
+from typing import Any
 
 import sphinx.application
 from docutils import nodes
@@ -20,7 +20,7 @@ class PromptCache:
     def __init__(self) -> None:
         """Initialize."""
         self.next_index = 1
-        self.prompts: Dict[str, int] = {}
+        self.prompts: dict[str, int] = {}
 
     def clear(self, *args: Any) -> None:
         """Clear all cache."""
@@ -72,7 +72,7 @@ class PromptDirective(rst.Directive):
     }
     has_content = True
 
-    def run(self) -> List[nodes.raw]:
+    def run(self) -> list[nodes.raw]:
         """Run the directive."""
         self.assert_has_content()
 
@@ -93,9 +93,9 @@ class PromptDirective(rst.Directive):
 
         language: str = self.options.get("language") or "text"
         prompt: str = self.options.get("prompts") or PROMPTS.get(language, "")
-        modifiers: List[str] = self.options.get("modifiers", "").split(",")
+        modifiers: list[str] = self.options.get("modifiers", "").split(",")
         if "auto" in modifiers:
-            prompts: List[str] = prompt.split(",")
+            prompts: list[str] = prompt.split(",")
 
         html = '<div class="highlight-default notranslate"><div class="highlight"><pre>'
         styles = ""
@@ -111,7 +111,7 @@ class PromptDirective(rst.Directive):
 
         Lexer = LEXERS.get(language, TextLexer)  # noqa: N806, pylint: disable=invalid-name
 
-        statement: List[str] = []
+        statement: list[str] = []
         if "auto" in modifiers:
             prompt_class = ""
             for line in self.content:
@@ -168,7 +168,7 @@ class PromptDirective(rst.Directive):
         ]
 
 
-def setup(app: sphinx.application.Sphinx) -> Dict[str, bool]:
+def setup(app: sphinx.application.Sphinx) -> dict[str, bool]:
     """Register the plugin."""
     app.add_directive("prompt", PromptDirective)
     app.connect("env-purge-doc", _cache.clear)
