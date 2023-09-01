@@ -38,15 +38,15 @@ packages = [{ include = "sphinx_prompt" }, { include = "sphinx_prompt/py.typed" 
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
-Sphinx = "7.1.2"
-pygments = "2.15.1"
+Sphinx = "7.2.5"
+pygments = "2.16.1"
 docutils = "0.20.1"
 
 [tool.poetry.group.dev.dependencies]
 prospector = { version = "1.10.2", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
 pytest = "7.4.0"
 types-docutils = "0.20.0.1"
-prospector-profile-duplicated = "0.1.0"
+prospector-profile-duplicated = "0.3.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-plugin-tweak-dependencies-version", "poetry-dynamic-versioning"]
