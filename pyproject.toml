@@ -30,7 +30,7 @@ classifiers = [
     "Topic :: Software Development :: Documentation",
     "Typing :: Typed",
 ]
-homepage = "https://hub.docker.com/r/sbrunner/sphinx-prompt/"
+homepage = "https://github.com/sbrunner/sphinx-prompt"
 repository = "https://github.com/sbrunner/sphinx-prompt"
 license = "BSD-3-Clause"
 keywords = ["sphinx", "shell", "prompt"]
