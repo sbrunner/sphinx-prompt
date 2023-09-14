@@ -14,7 +14,7 @@ strict = true
 name = "sphinx-prompt"
 version = "0.0.0"
 description = "Sphinx directive to add unselectable prompt"
-readme = "README.rst"
+readme = "README.md"
 authors = ["Stéphane Brunner <stephane.brunner@gmail.com>"]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
@@ -34,7 +34,12 @@ homepage = "https://github.com/sbrunner/sphinx-prompt"
 repository = "https://github.com/sbrunner/sphinx-prompt"
 license = "BSD-3-Clause"
 keywords = ["sphinx", "shell", "prompt"]
-packages = [{ include = "sphinx_prompt" }, { include = "sphinx_prompt/py.typed" }]
+packages = [
+    { include = "sphinx-prompt" },
+    { include = "sphinx-prompt/py.typed" },
+    { include = "sphinx_prompt" },
+    { include = "sphinx_prompt/py.typed" }
+]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
