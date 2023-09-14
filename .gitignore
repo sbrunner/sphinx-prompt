@@ -1,3 +1,4 @@
 *.pyc
 *.egg-info
 /.github/changelog-generator-cache
+/dist
