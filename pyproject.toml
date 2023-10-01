@@ -43,13 +43,13 @@ packages = [
 
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
-Sphinx = "7.2.5"
+Sphinx = "7.2.6"
 pygments = "2.16.1"
 docutils = "0.20.1"
 
 [tool.poetry.group.dev.dependencies]
 prospector = { version = "1.10.2", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
-pytest = "7.4.0"
+pytest = "7.4.2"
 types-docutils = "0.20.0.3"
 prospector-profile-duplicated = "0.3.0"
 
