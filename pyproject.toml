@@ -44,14 +44,14 @@ packages = [
 [tool.poetry.dependencies]
 python = ">=3.9,<4.0"
 Sphinx = "7.2.6"
-pygments = "2.16.1"
+pygments = "2.17.2"
 docutils = "0.20.1"
 
 [tool.poetry.group.dev.dependencies]
 prospector = { version = "1.10.3", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
 pytest = "7.4.3"
 types-docutils = "0.20.0.3"
-prospector-profile-duplicated = "0.3.0"
+prospector-profile-duplicated = "0.4.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-plugin-tweak-dependencies-version", "poetry-dynamic-versioning", "poetry-plugin-drop-python-upper-constraint"]
