@@ -52,8 +52,8 @@ jobs:
       - run: poetry run pytest
       - run: poetry run prospector --output=pylint sphinx_prompt
 
-      - name: Login to pypi
-        run: |
+      - name: Init pypi
+        run: |-
           echo "[pypi]" > ~/.pypirc
           echo "username = ${{ secrets.PYPI_USERNAME }}" >> ~/.pypirc
           echo "password = ${{ secrets.PYPI_PASSWORD }}" >> ~/.pypirc
