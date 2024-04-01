@@ -49,7 +49,7 @@ docutils = "0.20.1"
 
 [tool.poetry.group.dev.dependencies]
 prospector = { version = "1.10.3", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
-pytest = "8.0.2"
+pytest = "8.1.1"
 types-docutils = "0.20.0.20240331"
 prospector-profile-duplicated = "0.5.1"
 
