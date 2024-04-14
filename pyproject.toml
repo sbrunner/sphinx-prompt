@@ -46,6 +46,7 @@ python = ">=3.9,<4.0"
 Sphinx = "7.2.6"
 pygments = "2.17.2"
 docutils = "0.20.1"
+idna = "3.7"
 
 [tool.poetry.group.dev.dependencies]
 prospector = { version = "1.10.3", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
