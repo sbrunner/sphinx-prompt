@@ -50,7 +50,7 @@ idna = "3.7"
 
 [tool.poetry.group.dev.dependencies]
 prospector = { version = "1.10.3", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
-pytest = "8.2.0"
+pytest = "8.2.1"
 types-docutils = "0.21.0.20240423"
 prospector-profile-duplicated = "1.5.0"
 
