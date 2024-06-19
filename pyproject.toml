@@ -47,6 +47,7 @@ Sphinx = "7.3.7"
 pygments = "2.18.0"
 docutils = "0.21.2"
 idna = "3.7"
+urllib3 = "2.2.2"
 
 [tool.poetry.group.dev.dependencies]
 prospector = { version = "1.10.3", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
