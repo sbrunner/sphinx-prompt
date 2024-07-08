@@ -6,3 +6,4 @@ poetry-plugin-tweak-dependencies-version==1.5.2
 poetry-dynamic-versioning==1.4.0
 importlib-metadata<8.0.0
 setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
+certifi>=2024.7.4 # not directly required, pinned by Snyk to avoid a vulnerability
