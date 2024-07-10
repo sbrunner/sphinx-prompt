@@ -7,3 +7,4 @@ poetry-dynamic-versioning==1.4.0
 importlib-metadata<8.0.0
 setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
 certifi>=2024.7.4 # not directly required, pinned by Snyk to avoid a vulnerability
+zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
