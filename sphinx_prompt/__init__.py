@@ -88,8 +88,7 @@ class PromptDirective(rst.Directive):
                         location=(self.state.document.settings.env.docname, self.lineno),
                     )
                     break
-                else:
-                    self.options[option_name] = self.arguments[idx]
+                self.options[option_name] = self.arguments[idx]
 
         language: str = self.options.get("language") or "text"
         prompt: str = self.options.get("prompts") or PROMPTS.get(language, "")
@@ -142,7 +141,7 @@ class PromptDirective(rst.Directive):
                 highlighted_line = highlight("\n".join(statement), Lexer(), HtmlFormatter(nowrap=True)).strip(
                     "\r\n"
                 )
-                if len(line) == 0 or not line[-1] == "\\":
+                if len(line) == 0 or line[-1] != "\\":
                     html += f'<span class="{_cache.get_prompt_class(prompt)}">{highlighted_line}</span>\n'
                     if prompt is not None:
                         statements = "\n".join(statement)
