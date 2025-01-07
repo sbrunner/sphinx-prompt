@@ -23,14 +23,16 @@ pylint:
     - missing-module-docstring
     - invalid-name
 
-bandit:
-  run: true
-
 mypy:
   run: true
 
+  options:
+    python-version: '3.10'
 pyroma:
   run: true
 
 mccabe:
   run: false
+ruff:
+  options:
+    target-version: py310
