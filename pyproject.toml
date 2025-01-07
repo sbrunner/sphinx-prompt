@@ -1,3 +1,10 @@
+[tool.ruff]
+target-version = "py310"
+line-length = 110
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
 [tool.poetry]
 name = "sphinx-prompt"
 version = "0.0.0"
@@ -45,18 +52,12 @@ certifi = "2024.8.30"
 jinja2 = "3.1.5"
 
 [tool.poetry.group.dev.dependencies]
-prospector = { version = "1.13.3", extras = ["with_bandit", "with_mypy", "with_pyroma"] }
+prospector = { version = "1.13.3", extras = ["with_bandit", "with_mypy", "with_pyroma", "with_ruff"] }
+prospector-profile-utils = "1.15.1"
+prospector-profile-duplicated = "1.8.0"
 pytest = "8.3.4"
 types-docutils = "0.21.0.20241128"
-prospector-profile-duplicated = "1.8.0"
 
-
-[tool.ruff]
-target-version = "py310"
-line-length = 110
-
-[tool.ruff.lint.pydocstyle]
-convention = "numpy"
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-plugin-tweak-dependencies-version", "poetry-dynamic-versioning", "poetry-plugin-drop-python-upper-constraint"]
 build-backend = "poetry.core.masonry.api"

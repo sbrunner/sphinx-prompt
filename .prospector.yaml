@@ -1,38 +1,14 @@
 inherits:
+  - utils:base
+  - utils:no-design-checks
+  - utils:fix
+  - utils:unsafe
   - duplicated
-strictness: veryhigh
-max-line-length: 110
-doc-warnings: true
-
-pycodestyle:
-  disable:
-    - E501 # line too long
-pydocstyle:
-  disable:
-    - D104 # Missing docstring in public package
-    - D203 # 1 blank line required before class docstring (found 0)
-
-pylint:
-  disable:
-    - line-too-long
-    - no-else-break
-    - no-else-return
-    - too-many-branches
-    - too-many-statements
-    - too-many-locals
-    - missing-module-docstring
-    - invalid-name
 
 mypy:
-  run: true
-
   options:
     python-version: '3.10'
-pyroma:
-  run: true
 
-mccabe:
-  run: false
 ruff:
   options:
     target-version: py310
