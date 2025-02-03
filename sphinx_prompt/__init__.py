@@ -7,8 +7,11 @@ from docutils import nodes
 from docutils.parsers import rst
 from docutils.parsers.rst import directives
 from pygments import highlight
-from pygments.formatters import HtmlFormatter
-from pygments.lexers import BashLexer, BatchLexer, PowerShellLexer, PythonLexer, ScalaLexer, TextLexer
+from pygments.formatters.html import HtmlFormatter
+from pygments.lexers.jvm import ScalaLexer
+from pygments.lexers.python import PythonLexer
+from pygments.lexers.shell import BashLexer, BatchLexer, PowerShellLexer
+from pygments.lexers.special import TextLexer
 from sphinx.util import logging
 
 logger = logging.getLogger(__name__)
