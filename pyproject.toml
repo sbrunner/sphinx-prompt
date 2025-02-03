@@ -44,17 +44,17 @@ packages = [
 [tool.poetry.dependencies]
 python = ">=3.10,<4.0"
 Sphinx = "8.1.3"
-pygments = "2.18.0"
+pygments = "2.19.1"
 docutils = "0.21.2"
 idna = "3.10"
-urllib3 = "2.2.3"
+urllib3 = "2.3.0"
 certifi = "2025.1.31"
 jinja2 = "3.1.5"
 
 [tool.poetry.group.dev.dependencies]
-prospector = { version = "1.13.3", extras = ["with_bandit", "with_mypy", "with_pyroma", "with_ruff"] }
-prospector-profile-utils = "1.15.1"
-prospector-profile-duplicated = "1.8.1"
+prospector = { version = "1.14.1", extras = ["with_bandit", "with_mypy", "with_pyroma", "with_ruff"] }
+prospector-profile-utils = "1.17.0"
+prospector-profile-duplicated = "1.10.4"
 pytest = "8.3.4"
 types-docutils = "0.21.0.20241128"
 
