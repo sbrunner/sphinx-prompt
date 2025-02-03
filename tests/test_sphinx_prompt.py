@@ -157,7 +157,7 @@ def test(arguments, options, content, expected):
     stream = StringIO()
     reporter = docutils.utils.Reporter("test data", 2, 4, stream, 1)
     statemachine = docutils.statemachine.StateMachine([], None)
-    setattr(statemachine, "reporter", reporter)
+    statemachine.reporter = reporter
     directive = sphinx_prompt.PromptDirective(
         "prompt", arguments, options, content, 0, 0, "", None, statemachine
     )
