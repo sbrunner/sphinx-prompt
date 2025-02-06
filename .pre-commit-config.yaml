@@ -67,10 +67,21 @@ repos:
           - --tool=ruff
           - --die-on-tool-error
           - --output-format=pylint
+          - --profile=.prospector.yaml
+          - --profile=utils:unsafe
         additional_dependencies:
           - prospector-profile-duplicated==1.10.4 # pypi
           - prospector-profile-utils==1.17.0 # pypi
           - ruff==0.9.4 # pypi
+      - id: prospector
+        args:
+          - --die-on-tool-error
+          - --output-format=pylint
+          - --profile=utils:tests
+          - --profile=utils:unsafe
+        additional_dependencies:
+          - prospector-profile-utils==1.19.0
+          - ruff==0.9.4
   - repo: https://github.com/renovatebot/pre-commit-hooks
     rev: 39.156.2
     hooks:
