@@ -150,7 +150,7 @@ span.prompt2:before {
 ]
 
 
-@pytest.mark.parametrize("arguments, options, content, expected", testdata)
+@pytest.mark.parametrize(("arguments", "options", "content", "expected"), testdata)
 def test(arguments, options, content, expected):
     sphinx_prompt._cache.next_index = 1
     sphinx_prompt._cache.prompts.clear()
