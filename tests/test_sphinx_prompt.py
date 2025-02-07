@@ -159,7 +159,15 @@ def test(arguments, options, content, expected):
     statemachine = docutils.statemachine.StateMachine([], None)
     statemachine.reporter = reporter
     directive = sphinx_prompt.PromptDirective(
-        "prompt", arguments, options, content, 0, 0, "", None, statemachine
+        "prompt",
+        arguments,
+        options,
+        content,
+        0,
+        0,
+        "",
+        None,
+        statemachine,
     )
     result = directive.run()
     assert result[0].astext() == expected
