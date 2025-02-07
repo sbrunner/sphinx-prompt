@@ -1,6 +1,6 @@
 #!/usr/bin/python
 
-from typing import Any
+from typing import Any, ClassVar
 
 import sphinx.application
 from docutils import nodes
@@ -25,7 +25,7 @@ class PromptCache:
         self.next_index = 1
         self.prompts: dict[str, int] = {}
 
-    def clear(self, *args: Any) -> None:
+    def clear(self, *args: Any) -> None:  # noqa: ANN401
         """Clear all cache."""
         del args
         self.next_index = 1
@@ -67,7 +67,7 @@ class PromptDirective(rst.Directive):
     """The prompt directive."""
 
     optional_arguments = 3
-    option_spec = {
+    option_spec: ClassVar[dict[str, Any]] = {
         "language": directives.unchanged_required,
         "prompts": directives.unchanged_required,
         "modifiers": directives.unchanged_required,
@@ -127,7 +127,7 @@ class PromptDirective(rst.Directive):
                             ).strip("\r\n")
                             html += f'<span class="{prompt_class}">{highlighted_line}</span>\n'
                             statement = []
-                        line = line[len(prompt) + 1 :].rstrip()
+                        line = line[len(prompt) + 1 :].rstrip()  # noqa: PLW2901
                         prompt_class = _cache.get_prompt_class(prompt)
                         break
 
