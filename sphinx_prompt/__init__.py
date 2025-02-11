@@ -25,7 +25,7 @@ class PromptCache:
         self.next_index = 1
         self.prompts: dict[str, int] = {}
 
-    def clear(self, *args: Any) -> None:  # noqa: ANN401
+    def clear(self, *args: Any) -> None:
         """Clear all cache."""
         del args
         self.next_index = 1
