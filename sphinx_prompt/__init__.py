@@ -109,7 +109,7 @@ class PromptDirective(rst.Directive):
             html += '<style type="text/css">\n' + styles + "</style>"
         latex = "\\begin{Verbatim}[commandchars=\\\\\\{\\}]"
 
-        Lexer = LEXERS.get(language, TextLexer)  # noqa: N806, pylint: disable=invalid-name
+        Lexer = LEXERS.get(language, TextLexer)  # noqa: N806 # pylint: disable=invalid-name
 
         statement: list[str] = []
         if "auto" in modifiers:
