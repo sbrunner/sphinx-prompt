@@ -25,7 +25,7 @@ class PromptCache:
         self.next_index = 1
         self.prompts: dict[str, int] = {}
 
-    def clear(self, *args: Any) -> None:  # noqa: ANN401
+    def clear(self, *args: Any) -> None:
         """Clear all cache."""
         del args
         self.next_index = 1
@@ -109,7 +109,7 @@ class PromptDirective(rst.Directive):
             html += '<style type="text/css">\n' + styles + "</style>"
         latex = "\\begin{Verbatim}[commandchars=\\\\\\{\\}]"
 
-        Lexer = LEXERS.get(language, TextLexer)  # noqa: N806, pylint: disable=invalid-name
+        Lexer = LEXERS.get(language, TextLexer)  # noqa: N806 # pylint: disable=invalid-name
 
         statement: list[str] = []
         if "auto" in modifiers:

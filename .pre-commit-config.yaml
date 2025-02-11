@@ -71,7 +71,7 @@ repos:
           - --profile=utils:autofix
         additional_dependencies:
           - prospector-profile-duplicated==1.10.4 # pypi
-          - prospector-profile-utils==1.19.3 # pypi
+          - prospector-profile-utils==1.20.2 # pypi
           - ruff==0.9.4 # pypi
       - id: prospector
         args:
