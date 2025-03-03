@@ -73,6 +73,15 @@ repos:
           - prospector-profile-duplicated==1.10.4 # pypi
           - prospector-profile-utils==1.21.9 # pypi
           - ruff==0.9.9 # pypi
+        exclude: |-
+          (?x)(
+            ^tests?/?
+            |/tests?(/|$)
+            |.*/tests(/|$)
+            |(^|/)test_[_a-zA-Z0-9]+.py$
+            |(^|/)[_a-zA-Z0-9]+_tests?.py$
+            |(^|/)tests?.py$
+          )
       - id: prospector
         args:
           - --die-on-tool-error
