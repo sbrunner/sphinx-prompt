@@ -711,18 +711,18 @@ files = [
 
 [[package]]
 name = "prospector-profile-utils"
-version = "1.21.7"
+version = "1.21.9"
 description = "Some utility Prospector profiles."
 optional = false
 python-versions = "*"
 groups = ["dev"]
 files = [
-    {file = "prospector_profile_utils-1.21.7-py2.py3-none-any.whl", hash = "sha256:afcfa01a2bfd0561cf0ff2c89c734455adedab6621ffb25b8fbfe188daa8b1d1"},
-    {file = "prospector_profile_utils-1.21.7.tar.gz", hash = "sha256:0c09fb57893abe4eb4836ac6c7619951fcfcfb354d45c4f40ff51a99bb78909f"},
+    {file = "prospector_profile_utils-1.21.9-py2.py3-none-any.whl", hash = "sha256:bbd8b91d0b7ccc2bda3e2f6b6188303ea3415193382d8ce79052a2a8a2a2a9c2"},
+    {file = "prospector_profile_utils-1.21.9.tar.gz", hash = "sha256:08dd034d3022cacf4e911a36094b84d54314c1b4bf7c9f52932c41b0abe0ed1c"},
 ]
 
 [package.dependencies]
-prospector = {version = ">=1.13.0", extras = ["with-mypy", "with-ruff"]}
+prospector = {version = ">=1.14.0", extras = ["with-mypy", "with-ruff"]}
 
 [[package]]
 name = "pycodestyle"
@@ -856,6 +856,8 @@ files = [
 ]
 
 [package.dependencies]
+astroid = ">=1.0"
+pylint = ">=1.0"
 pylint-plugin-utils = ">=0.2.1"
 
 [[package]]
@@ -1399,4 +1401,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<4.0"
-content-hash = "66db096ac2f0f463b4dae9ada73df97126b21c27163909f16d2871d06fc40d56"
+content-hash = "9a1f82f608593ff24e383832a6f22cf9912a8326b1281677d2318b284ce68f37"
