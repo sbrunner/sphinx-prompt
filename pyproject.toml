@@ -52,7 +52,7 @@ jinja2 = "3.1.5"
 
 [tool.poetry.group.dev.dependencies]
 prospector = { version = "1.15.2", extras = ["with_bandit", "with_mypy", "with_pyroma", "with_ruff"] }
-prospector-profile-utils = "1.21.7"
+prospector-profile-utils = "1.21.9"
 prospector-profile-duplicated = "1.10.4"
 pytest = "8.3.4"
 types-docutils = "0.21.0.20241128"
