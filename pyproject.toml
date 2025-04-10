@@ -6,39 +6,7 @@ line-length = 110
 convention = "numpy"
 
 [tool.poetry]
-name = "sphinx-prompt"
 version = "0.0.0"
-description = "Sphinx directive to add unselectable prompt"
-readme = "README.md"
-authors = ["Stéphane Brunner <stephane.brunner@gmail.com>"]
-classifiers = [
-    'Development Status :: 5 - Production/Stable',
-    'Environment :: Plugins',
-    'Environment :: Web Environment',
-    'Framework :: Sphinx :: Extension',
-    'Intended Audience :: Developers',
-    'License :: OSI Approved :: BSD License',
-    'Operating System :: OS Independent',
-    'Programming Language :: Python',
-    'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.11',
-    'Programming Language :: Python :: 3.12',
-    'Programming Language :: Python :: 3.13',
-    'Topic :: Documentation',
-    'Topic :: Documentation :: Sphinx',
-    'Topic :: Software Development :: Documentation',
-    'Typing :: Typed',
-]
-homepage = "https://github.com/sbrunner/sphinx-prompt"
-repository = "https://github.com/sbrunner/sphinx-prompt"
-license = "BSD-3-Clause"
-keywords = ["sphinx", "shell", "prompt"]
-packages = [
-    { include = "sphinx-prompt" },
-    { include = "sphinx-prompt/py.typed" },
-    { include = "sphinx_prompt" },
-    { include = "sphinx_prompt/py.typed" }
-]
 
 [tool.poetry.dependencies]
 python = ">=3.11,<4.0"
@@ -76,6 +44,43 @@ format-jinja = """
 {{serialize_pep440(bump_version(base), dev=distance)}}
 {%- endif -%}
 """
+
+[project]
+dynamic = ["dependencies", "version"]
+name = "sphinx-prompt"
+description = "Sphinx directive to add unselectable prompt"
+readme = "README.md"
+keywords = ["sphinx", "shell", "prompt"]
+license = "BSD-3-Clause"
+classifiers = [
+    'Development Status :: 5 - Production/Stable',
+    'Environment :: Plugins',
+    'Environment :: Web Environment',
+    'Framework :: Sphinx :: Extension',
+    'Intended Audience :: Developers',
+    'License :: OSI Approved :: BSD License',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.11',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
+    'Topic :: Documentation',
+    'Topic :: Documentation :: Sphinx',
+    'Topic :: Software Development :: Documentation',
+    'Typing :: Typed',
+]
+authors = [{name = "Stéphane Brunner",email = "stephane.brunner@gmail.com"}]
+packages = [
+    { include = "sphinx-prompt" },
+    { include = "sphinx-prompt/py.typed" },
+    { include = "sphinx_prompt" },
+    { include = "sphinx_prompt/py.typed" }
+]
+
+[project.urls]
+repository = "https://github.com/sbrunner/sphinx-prompt"
+"Bug Tracker" = "https://github.com/sbrunner/sphinx-prompt/issues"
 
 [build-system]
 requires = ["poetry-core>=1.0.0", "poetry-plugin-tweak-dependencies-version", "poetry-dynamic-versioning", "poetry-plugin-drop-python-upper-constraint"]
