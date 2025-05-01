@@ -72,7 +72,7 @@ repos:
         additional_dependencies:
           - prospector-profile-duplicated==1.10.5 # pypi
           - prospector-profile-utils==1.22.3 # pypi
-          - ruff==0.11.7 # pypi
+          - ruff==0.11.8 # pypi
         exclude: |-
           (?x)(
             ^tests?/?
@@ -90,7 +90,7 @@ repos:
           - --profile=utils:pre-commit
         additional_dependencies:
           - prospector-profile-utils==1.22.3 # pypi
-          - ruff==0.11.7 # pypi
+          - ruff==0.11.8 # pypi
   - repo: https://github.com/renovatebot/pre-commit-hooks
     rev: 40.0.6
     hooks:
@@ -101,7 +101,7 @@ repos:
       - id: jsonschema-validator
         files: ^\.github/publish\.yaml$
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.11.7
+    rev: v0.11.8
     hooks:
       - id: ruff-format
   - repo: https://github.com/sbrunner/python-versions-hook
