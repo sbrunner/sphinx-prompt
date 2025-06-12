@@ -4,3 +4,4 @@ pip==25.1.1
 poetry-plugin-export==1.9.0
 certifi>=2024.7.4 # not directly required, pinned by Snyk to avoid a vulnerability
 zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
+requests>=2.32.4 # not directly required, pinned by Snyk to avoid a vulnerability
