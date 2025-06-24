@@ -93,7 +93,7 @@ repos:
           - prospector-profile-utils==1.23.0 # pypi
           - ruff==0.11.12 # pypi
   - repo: https://github.com/renovatebot/pre-commit-hooks
-    rev: 40.36.8
+    rev: 41.6.4
     hooks:
       - id: renovate-config-validator
   - repo: https://github.com/sbrunner/jsonschema-validator
