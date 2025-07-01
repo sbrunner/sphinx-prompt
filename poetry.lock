@@ -888,14 +888,14 @@ files = [
 
 [[package]]
 name = "pyroma"
-version = "4.3"
+version = "4.3.1"
 description = "Test your project's packaging friendliness"
 optional = false
 python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "pyroma-4.3-py3-none-any.whl", hash = "sha256:33eb4396c0b8400d1e96f17643d63a89f9e9704382761ee26eab17401ba217df"},
-    {file = "pyroma-4.3.tar.gz", hash = "sha256:265a3566a43d20a9bce7a5844936cf0d5de937b983d3227112d7d5f9e56d37f1"},
+    {file = "pyroma-4.3.1-py3-none-any.whl", hash = "sha256:6b8a6530484f26a09cc4328b7737e0825fe8cf907f0b14c619eb51669e0c0d0d"},
+    {file = "pyroma-4.3.1.tar.gz", hash = "sha256:8233edfdcc0eda8df475974117c8bd683e44d21675826ee1841dcdad8fd41a5f"},
 ]
 
 [package.dependencies]
