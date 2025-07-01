@@ -888,14 +888,14 @@ files = [
 
 [[package]]
 name = "pyroma"
-version = "4.2"
+version = "4.3"
 description = "Test your project's packaging friendliness"
 optional = false
-python-versions = ">=3.7"
+python-versions = ">=3.9"
 groups = ["dev"]
 files = [
-    {file = "pyroma-4.2-py3-none-any.whl", hash = "sha256:a59854b6f8a72b55384cc1de42410e5c5ac59d0c40a92e84fd8364aa6cec3e37"},
-    {file = "pyroma-4.2.tar.gz", hash = "sha256:6c727dc4a7a10e12274faed5fb47ebd499ca0821995befec98e3cfcaf1e7383c"},
+    {file = "pyroma-4.3-py3-none-any.whl", hash = "sha256:33eb4396c0b8400d1e96f17643d63a89f9e9704382761ee26eab17401ba217df"},
+    {file = "pyroma-4.3.tar.gz", hash = "sha256:265a3566a43d20a9bce7a5844936cf0d5de937b983d3227112d7d5f9e56d37f1"},
 ]
 
 [package.dependencies]
@@ -908,7 +908,7 @@ setuptools = ">=42"
 trove-classifiers = ">=2022.6.26"
 
 [package.extras]
-test = ["setuptools (>=60)", "zest.releaser[recommended]"]
+test = ["pytest", "setuptools (>=60)", "zest.releaser[recommended]"]
 
 [[package]]
 name = "pytest"
