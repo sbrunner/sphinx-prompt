@@ -90,14 +90,14 @@ virtualenv = ["virtualenv (>=20.0.35)"]
 
 [[package]]
 name = "certifi"
-version = "2025.7.9"
+version = "2025.7.14"
 description = "Python package for providing Mozilla's CA Bundle."
 optional = false
 python-versions = ">=3.7"
 groups = ["main", "dev"]
 files = [
-    {file = "certifi-2025.7.9-py3-none-any.whl", hash = "sha256:d842783a14f8fdd646895ac26f719a061408834473cfc10203f6a575beb15d39"},
-    {file = "certifi-2025.7.9.tar.gz", hash = "sha256:c1d2ec05395148ee10cf672ffc28cd37ea0ab0d99f9cc74c43e588cbd111b079"},
+    {file = "certifi-2025.7.14-py3-none-any.whl", hash = "sha256:6b31f564a415d79ee77df69d757bb49a5bb53bd9f756cbbe24394ffd6fc1f4b2"},
+    {file = "certifi-2025.7.14.tar.gz", hash = "sha256:8ea99dbdfaaf2ba2f9bac77b9249ef62ec5218e7c2b2e903378ed5fccf765995"},
 ]
 
 [[package]]
@@ -1401,4 +1401,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.11,<4.0"
-content-hash = "3ff7f1f553062930649d6b72870119b59e3af03035b8c7cd9c18ae5a6e358b01"
+content-hash = "74467424be4511d5b548431ac5ee93d0f4c81392d83ed88661aeccc47ca8e5b4"
