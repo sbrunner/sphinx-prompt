@@ -27,7 +27,7 @@ jobs:
     steps:
       - run: docker system prune --all --force
       - uses: actions/checkout@v4
-      - run: cp -r sphinx{_,-}prompt
+      - run: cp --recursive sphinx{_,-}prompt
 
       - uses: actions/setup-python@v5
         with:

@@ -7,6 +7,12 @@ convention = "numpy"
 
 [tool.poetry]
 version = "0.0.0"
+packages = [
+    { include = "sphinx-prompt" },
+    { include = "sphinx-prompt/py.typed" },
+    { include = "sphinx_prompt" },
+    { include = "sphinx_prompt/py.typed" }
+]
 
 [tool.poetry.dependencies]
 python = ">=3.11,<4.0"
@@ -71,12 +77,6 @@ classifiers = [
     'Typing :: Typed',
 ]
 authors = [{name = "Stéphane Brunner",email = "stephane.brunner@gmail.com"}]
-packages = [
-    { include = "sphinx-prompt" },
-    { include = "sphinx-prompt/py.typed" },
-    { include = "sphinx_prompt" },
-    { include = "sphinx_prompt/py.typed" }
-]
 requires-python = ">=3.11"
 dependencies = ["Sphinx", "pygments", "docutils", "idna", "urllib3", "certifi", "jinja2", "requests==2.32.4"]
 
