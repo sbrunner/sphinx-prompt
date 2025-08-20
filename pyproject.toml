@@ -11,10 +11,10 @@ extend-select = ["UP", "I", "S", "B", "ALL"]
 convention = "numpy"
 
 [tool.ruff.lint.extend-per-file-ignores]
-"tests/**" = ["E722", "RUF100"]
-"**/tests/**" = ["E722", "RUF100"]
-"**/test_*.py" = ["E722", "RUF100"]
-"**/*_test.py" = ["E722", "RUF100"]
+"tests/**" = ["ANN", "ARG", "D", "E722", "INP001", "RET", "RUF012", "RUF100", "SLF"]
+"**/tests/**" = ["ANN", "ARG", "D", "E722", "INP001", "RET", "RUF012", "RUF100", "SLF"]
+"**/test_*.py" = ["ANN", "ARG", "D", "E722", "INP001", "RET", "RUF012", "RUF100", "SLF"]
+"**/*_test.py" = ["ANN", "ARG", "D", "E722", "INP001", "RET", "RUF012", "RUF100", "SLF"]
 
 [tool.poetry]
 version = "0.0.0"
