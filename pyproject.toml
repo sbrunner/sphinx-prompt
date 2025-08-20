@@ -11,10 +11,10 @@ extend-select = ["UP", "I", "S", "B", "ALL"]
 convention = "numpy"
 
 [tool.ruff.lint.extend-per-file-ignores]
-"tests/**" = ["E722", "RUF100"]
-"**/tests/**" = ["E722", "RUF100"]
-"**/test_*.py" = ["E722", "RUF100"]
-"**/*_test.py" = ["E722", "RUF100"]
+"tests/**" = ["ANN", "ARG", "D", "E722", "INP001", "RET", "RUF012", "RUF100", "SLF"]
+"**/tests/**" = ["ANN", "ARG", "D", "E722", "INP001", "RET", "RUF012", "RUF100", "SLF"]
+"**/test_*.py" = ["ANN", "ARG", "D", "E722", "INP001", "RET", "RUF012", "RUF100", "SLF"]
+"**/*_test.py" = ["ANN", "ARG", "D", "E722", "INP001", "RET", "RUF012", "RUF100", "SLF"]
 
 [tool.poetry]
 version = "0.0.0"
@@ -37,7 +37,7 @@ jinja2 = "3.1.6"
 
 [tool.poetry.group.dev.dependencies]
 prospector = { version = "1.17.3", extras = ["with_bandit", "with_mypy", "with_pyroma", "with_ruff"] }
-prospector-profile-utils = "1.26.1"
+prospector-profile-utils = "1.26.2"
 prospector-profile-duplicated = "1.10.5"
 pytest = "8.4.1"
 types-docutils = "0.21.0.20250604"
