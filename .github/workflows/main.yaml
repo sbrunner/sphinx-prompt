@@ -26,10 +26,10 @@ jobs:
 
     steps:
       - run: docker system prune --all --force
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - run: cp --recursive sphinx{_,-}prompt
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: '3.13'
       - run: python3 -m pip install --requirement=ci/requirements.txt
