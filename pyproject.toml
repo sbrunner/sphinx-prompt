@@ -29,7 +29,7 @@ packages = [
 python = ">=3.11,<4.0"
 Sphinx = "8.2.3"
 pygments = "2.19.2"
-docutils = "0.21.2"
+docutils = "0.22.2"
 idna = "3.10"
 urllib3 = "2.5.0"
 certifi = "2025.8.3"
@@ -39,8 +39,8 @@ jinja2 = "3.1.6"
 prospector = { version = "1.17.3", extras = ["with_bandit", "with_mypy", "with_pyroma", "with_ruff"] }
 prospector-profile-utils = "1.26.5"
 prospector-profile-duplicated = "1.10.5"
-pytest = "8.4.1"
-types-docutils = "0.21.0.20250604"
+pytest = "8.4.2"
+types-docutils = "0.22.2.20250924"
 
 [tool.poetry-plugin-tweak-dependencies-version]
 default = "present"
@@ -89,7 +89,7 @@ classifiers = [
 ]
 authors = [{name = "Stéphane Brunner",email = "stephane.brunner@gmail.com"}]
 requires-python = ">=3.11"
-dependencies = ["Sphinx", "pygments", "docutils", "idna", "urllib3", "certifi", "jinja2", "requests==2.32.4"]
+dependencies = ["Sphinx", "pygments", "docutils", "idna", "urllib3", "certifi", "jinja2", "requests==2.32.5"]
 
 [project.urls]
 repository = "https://github.com/sbrunner/sphinx-prompt"
