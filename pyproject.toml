@@ -29,8 +29,8 @@ packages = [
 python = ">=3.11,<4.0"
 Sphinx = "9.0.0"
 pygments = "2.19.2"
-docutils = "0.21.2"
-idna = "3.10"
+docutils = "0.22.3"
+idna = "3.11"
 urllib3 = "2.5.0"
 certifi = "2025.11.12"
 jinja2 = "3.1.6"
@@ -40,7 +40,7 @@ prospector = { version = "1.17.3", extras = ["with_bandit", "with_mypy", "with_p
 prospector-profile-utils = "1.26.5"
 prospector-profile-duplicated = "1.10.5"
 pytest = "9.0.1"
-types-docutils = "0.21.0.20250604"
+types-docutils = "0.22.3.20251115"
 
 [tool.poetry-plugin-tweak-dependencies-version]
 default = "present"
