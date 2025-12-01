@@ -27,7 +27,7 @@ packages = [
 
 [tool.poetry.dependencies]
 python = ">=3.11,<4.0"
-Sphinx = "8.2.3"
+Sphinx = "9.0.0"
 pygments = "2.19.2"
 docutils = "0.21.2"
 idna = "3.10"
