@@ -251,14 +251,14 @@ profile = ["gprof2dot (>=2022.7.29)"]
 
 [[package]]
 name = "docutils"
-version = "0.22.3"
+version = "0.22.4"
 description = "Docutils -- Python Documentation Utilities"
 optional = false
 python-versions = ">=3.9"
 groups = ["main", "dev"]
 files = [
-    {file = "docutils-0.22.3-py3-none-any.whl", hash = "sha256:bd772e4aca73aff037958d44f2be5229ded4c09927fcf8690c577b66234d6ceb"},
-    {file = "docutils-0.22.3.tar.gz", hash = "sha256:21486ae730e4ca9f622677b1412b879af1791efcfba517e4c6f60be543fc8cdd"},
+    {file = "docutils-0.22.4-py3-none-any.whl", hash = "sha256:d0013f540772d1420576855455d050a2180186c91c15779301ac2ccb3eeb68de"},
+    {file = "docutils-0.22.4.tar.gz", hash = "sha256:4db53b1fde9abecbb74d91230d32ab626d94f6badfc575d6db9194a49df29968"},
 ]
 
 [[package]]
@@ -900,10 +900,7 @@ files = [
 [package.dependencies]
 astroid = ">=3.3.8,<=3.4.0.dev0"
 colorama = {version = ">=0.4.5", markers = "sys_platform == \"win32\""}
-dill = [
-    {version = ">=0.3.7", markers = "python_version >= \"3.12\""},
-    {version = ">=0.3.6", markers = "python_version == \"3.11\""},
-]
+dill = {version = ">=0.3.7", markers = "python_version >= \"3.12\""}
 isort = ">=4.2.5,<5.13 || >5.13,<7"
 mccabe = ">=0.6,<0.8"
 platformdirs = ">=2.2"
@@ -1000,14 +997,14 @@ test = ["flit-core (>=3.4,<4)", "pytest", "setuptools (>=60)", "tox", "zest.rele
 
 [[package]]
 name = "pytest"
-version = "9.0.1"
+version = "9.0.2"
 description = "pytest: simple powerful testing with Python"
 optional = false
 python-versions = ">=3.10"
 groups = ["dev"]
 files = [
-    {file = "pytest-9.0.1-py3-none-any.whl", hash = "sha256:67be0030d194df2dfa7b556f2e56fb3c3315bd5c8822c6951162b92b32ce7dad"},
-    {file = "pytest-9.0.1.tar.gz", hash = "sha256:3e9c069ea73583e255c3b21cf46b8d3c56f6e3a1a8f6da94ccb0fcf57b9d73c8"},
+    {file = "pytest-9.0.2-py3-none-any.whl", hash = "sha256:711ffd45bf766d5264d487b917733b453d917afd2b0ad65223959f59089f875b"},
+    {file = "pytest-9.0.2.tar.gz", hash = "sha256:75186651a92bd89611d1d9fc20f0b4345fd827c41ccd5c299a868a05d70edf11"},
 ]
 
 [package.dependencies]
@@ -1264,21 +1261,21 @@ files = [
 
 [[package]]
 name = "sphinx"
-version = "9.0.1"
+version = "9.1.0"
 description = "Python documentation generator"
 optional = false
-python-versions = ">=3.11"
+python-versions = ">=3.12"
 groups = ["main"]
 files = [
-    {file = "sphinx-9.0.1-py3-none-any.whl", hash = "sha256:5a9506b709d6bd3d4c3f142b5b58801c202837b54875727e3adcba98d4839735"},
-    {file = "sphinx-9.0.1.tar.gz", hash = "sha256:c820d856657ce7cd41ce2c097f478ac3d7ddad9779ad83de4f0136a81ff388fd"},
+    {file = "sphinx-9.1.0-py3-none-any.whl", hash = "sha256:c84fdd4e782504495fe4f2c0b3413d6c2bf388589bb352d439b2a3bb99991978"},
+    {file = "sphinx-9.1.0.tar.gz", hash = "sha256:7741722357dd75f8190766926071fed3bdc211c74dd2d7d4df5404da95930ddb"},
 ]
 
 [package.dependencies]
 alabaster = ">=0.7.14"
 babel = ">=2.13"
 colorama = {version = ">=0.4.6", markers = "sys_platform == \"win32\""}
-docutils = ">=0.20,<0.23"
+docutils = ">=0.21,<0.23"
 imagesize = ">=1.3"
 Jinja2 = ">=3.1"
 packaging = ">=23.0"
@@ -1467,14 +1464,14 @@ files = [
 
 [[package]]
 name = "urllib3"
-version = "2.6.0"
+version = "2.6.2"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
 optional = false
 python-versions = ">=3.9"
 groups = ["main", "dev"]
 files = [
-    {file = "urllib3-2.6.0-py3-none-any.whl", hash = "sha256:c90f7a39f716c572c4e3e58509581ebd83f9b59cced005b7db7ad2d22b0db99f"},
-    {file = "urllib3-2.6.0.tar.gz", hash = "sha256:cb9bcef5a4b345d5da5d145dc3e30834f58e8018828cbc724d30b4cb7d4d49f1"},
+    {file = "urllib3-2.6.2-py3-none-any.whl", hash = "sha256:ec21cddfe7724fc7cb4ba4bea7aa8e2ef36f607a4bab81aa6ce42a13dc3f03dd"},
+    {file = "urllib3-2.6.2.tar.gz", hash = "sha256:016f9c98bb7e98085cb2b4b17b87d2c702975664e4f060c6532e64d1c1a5e797"},
 ]
 
 [package.extras]
@@ -1485,5 +1482,5 @@ zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 
 [metadata]
 lock-version = "2.1"
-python-versions = ">=3.11,<4.0"
-content-hash = "4b70d8f2087f7f877667905568cf9e6a415e47e45538e3753389a63305149715"
+python-versions = ">=3.12,<4.0"
+content-hash = "b555aa7139b8463ea6059b81d3270018266451fa59c0ae8ff4dd88540134080b"

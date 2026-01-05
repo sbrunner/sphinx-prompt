@@ -1,5 +1,5 @@
 [tool.ruff]
-target-version = "py311"
+target-version = "py312"
 line-length = 110
 
 [tool.ruff.lint]
@@ -26,7 +26,7 @@ packages = [
 ]
 
 [tool.poetry.dependencies]
-python = ">=3.11,<4.0"
+python = ">=3.12,<4.0"
 Sphinx = "9.1.0"
 pygments = "2.19.2"
 docutils = "0.22.4"
@@ -75,11 +75,9 @@ classifiers = [
     'Environment :: Web Environment',
     'Framework :: Sphinx :: Extension',
     'Intended Audience :: Developers',
-    'License :: OSI Approved :: BSD License',
     'Operating System :: OS Independent',
     'Programming Language :: Python',
     'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.11',
     'Programming Language :: Python :: 3.12',
     'Programming Language :: Python :: 3.13',
     'Topic :: Documentation',
@@ -88,7 +86,7 @@ classifiers = [
     'Typing :: Typed',
 ]
 authors = [{name = "Stéphane Brunner",email = "stephane.brunner@gmail.com"}]
-requires-python = ">=3.11"
+requires-python = ">=3.12"
 dependencies = ["Sphinx", "pygments", "docutils", "idna", "urllib3", "certifi", "jinja2", "requests>=2.32.4"]
 
 [project.urls]
