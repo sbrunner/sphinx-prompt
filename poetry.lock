@@ -814,14 +814,14 @@ with-vulture = ["vulture"]
 
 [[package]]
 name = "prospector-profile-duplicated"
-version = "1.11.0"
+version = "1.12.0"
 description = "Profile that can be used to disable the duplicated or conflict rules between Prospector and other tools"
 optional = false
 python-versions = "*"
 groups = ["dev"]
 files = [
-    {file = "prospector_profile_duplicated-1.11.0-py2.py3-none-any.whl", hash = "sha256:8552d57b17442d5dfa143e9e05dd4139c86e1a12ea7b35fef968dbf0820856ce"},
-    {file = "prospector_profile_duplicated-1.11.0.tar.gz", hash = "sha256:b2fc64541e0cef51e6929f090f204774c219a0fe01ffb9760cc6165ea97d7227"},
+    {file = "prospector_profile_duplicated-1.12.0-py2.py3-none-any.whl", hash = "sha256:e833592234172f7b557c54c0c6ad047ac1df0019e361d3d2549f59978062cd98"},
+    {file = "prospector_profile_duplicated-1.12.0.tar.gz", hash = "sha256:5543e27d7ac77a5426123c988274b50834b07902567abdb5a1f61496cc625d96"},
 ]
 
 [package.dependencies]
@@ -829,18 +829,18 @@ prospector = "*"
 
 [[package]]
 name = "prospector-profile-utils"
-version = "1.26.5"
+version = "1.27.0"
 description = "Some utility Prospector profiles."
 optional = false
 python-versions = "*"
 groups = ["dev"]
 files = [
-    {file = "prospector_profile_utils-1.26.5-py2.py3-none-any.whl", hash = "sha256:370637f4a1ec9bc48c02a2cf7d66aec29dc47690f7936f66f6571333af56c0ba"},
-    {file = "prospector_profile_utils-1.26.5.tar.gz", hash = "sha256:393614037822c26eb3ec25ba2e281de1edc07e36e0c6ea716a7b94c2a047308d"},
+    {file = "prospector_profile_utils-1.27.0-py2.py3-none-any.whl", hash = "sha256:15902c24d5005c895d79b232678c878b1d2bdaaedfec7d29774d2b3ba5e0d4d7"},
+    {file = "prospector_profile_utils-1.27.0.tar.gz", hash = "sha256:1f74b5c07b895ce280e5988a3b82f475424b59efc70914881fcddd0cdec7a716"},
 ]
 
 [package.dependencies]
-prospector = {version = ">=1.14.0", extras = ["with-mypy", "with-ruff"]}
+prospector = {version = ">=1.13.0", extras = ["with-mypy", "with-ruff"]}
 
 [[package]]
 name = "pycodestyle"
@@ -1453,14 +1453,14 @@ files = [
 
 [[package]]
 name = "types-docutils"
-version = "0.22.3.20251115"
+version = "0.22.3.20260223"
 description = "Typing stubs for docutils"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.10"
 groups = ["dev"]
 files = [
-    {file = "types_docutils-0.22.3.20251115-py3-none-any.whl", hash = "sha256:c6e53715b65395d00a75a3a8a74e352c669bc63959e65a207dffaa22f4a2ad6e"},
-    {file = "types_docutils-0.22.3.20251115.tar.gz", hash = "sha256:0f79ea6a7bd4d12d56c9f824a0090ffae0ea4204203eb0006392906850913e16"},
+    {file = "types_docutils-0.22.3.20260223-py3-none-any.whl", hash = "sha256:cc2d6b7560a28e351903db0989091474aa619ad287843a018324baee9c4d9a8f"},
+    {file = "types_docutils-0.22.3.20260223.tar.gz", hash = "sha256:e90e868da82df615ea2217cf36dff31f09660daa15fc0f956af53f89c1364501"},
 ]
 
 [[package]]
@@ -1496,4 +1496,4 @@ zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<4.0"
-content-hash = "ee5788b9d8fbfaff24313823d2093302eafd6553dd085e4cb1f6e0b8d6656e9a"
+content-hash = "9c242093775dce3e08a660b710a1295679a713b8ab2fc926b59bd506fd4af8d1"

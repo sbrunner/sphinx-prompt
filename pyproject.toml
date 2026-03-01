@@ -37,10 +37,10 @@ jinja2 = "3.1.6"
 
 [tool.poetry.group.dev.dependencies]
 prospector = { version = "1.18.0", extras = ["with_bandit", "with_mypy", "with_pyroma", "with_ruff"] }
-prospector-profile-utils = "1.26.5"
-prospector-profile-duplicated = "1.11.0"
+prospector-profile-utils = "1.27.0"
+prospector-profile-duplicated = "1.12.0"
 pytest = "9.0.2"
-types-docutils = "0.22.3.20251115"
+types-docutils = "0.22.3.20260223"
 
 [tool.poetry-plugin-tweak-dependencies-version]
 default = "present"
