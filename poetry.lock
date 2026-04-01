@@ -1454,14 +1454,14 @@ files = [
 
 [[package]]
 name = "types-docutils"
-version = "0.22.3.20260223"
+version = "0.22.3.20260322"
 description = "Typing stubs for docutils"
 optional = false
 python-versions = ">=3.10"
 groups = ["dev"]
 files = [
-    {file = "types_docutils-0.22.3.20260223-py3-none-any.whl", hash = "sha256:cc2d6b7560a28e351903db0989091474aa619ad287843a018324baee9c4d9a8f"},
-    {file = "types_docutils-0.22.3.20260223.tar.gz", hash = "sha256:e90e868da82df615ea2217cf36dff31f09660daa15fc0f956af53f89c1364501"},
+    {file = "types_docutils-0.22.3.20260322-py3-none-any.whl", hash = "sha256:681d4510ce9b80a0c6a593f0f9843d81f8caa786db7b39ba04d9fd5480ac4442"},
+    {file = "types_docutils-0.22.3.20260322.tar.gz", hash = "sha256:e2450bb997283c3141ec5db3e436b91f0aa26efe35eb9165178ca976ccb4930b"},
 ]
 
 [[package]]
@@ -1497,4 +1497,4 @@ zstd = ["backports-zstd (>=1.0.0) ; python_version < \"3.14\""]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.12,<4.0"
-content-hash = "112df6383db1da43b5999708e1bc5ad22d2b26d066f629adae945c13451209ee"
+content-hash = "585649be5c6a495c3933c473a711093252f1f16cf80147ef73b5bb363b2b2b12"
