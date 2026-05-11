@@ -1,3 +1,39 @@
+
+[build-system]
+requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+dynamic = ["dependencies", "version"]
+name = "sphinx-prompt"
+description = "Sphinx directive to add unselectable prompt"
+readme = "README.md"
+keywords = ["sphinx", "shell", "prompt"]
+license = "BSD-3-Clause"
+classifiers = [
+    'Development Status :: 5 - Production/Stable',
+    'Environment :: Plugins',
+    'Environment :: Web Environment',
+    'Framework :: Sphinx :: Extension',
+    'Intended Audience :: Developers',
+    'Operating System :: OS Independent',
+    'Programming Language :: Python',
+    'Programming Language :: Python :: 3',
+    'Programming Language :: Python :: 3.12',
+    'Programming Language :: Python :: 3.13',
+    'Topic :: Documentation',
+    'Topic :: Documentation :: Sphinx',
+    'Topic :: Software Development :: Documentation',
+    'Typing :: Typed',
+]
+authors = [{name = "Stéphane Brunner",email = "stephane.brunner@gmail.com"}]
+requires-python = ">=3.12"
+dependencies = ["Sphinx", "pygments", "docutils", "idna", "urllib3", "certifi", "jinja2", "requests>=2.32.4"]
+
+[project.urls]
+repository = "https://github.com/sbrunner/sphinx-prompt"
+"Bug Tracker" = "https://github.com/sbrunner/sphinx-prompt/issues"
+
 [tool.ruff]
 target-version = "py312"
 line-length = 110
@@ -61,38 +97,3 @@ format-jinja = """
 {{serialize_pep440(bump_version(base), dev=distance)}}
 {%- endif -%}
 """
-
-[project]
-dynamic = ["dependencies", "version"]
-name = "sphinx-prompt"
-description = "Sphinx directive to add unselectable prompt"
-readme = "README.md"
-keywords = ["sphinx", "shell", "prompt"]
-license = "BSD-3-Clause"
-classifiers = [
-    'Development Status :: 5 - Production/Stable',
-    'Environment :: Plugins',
-    'Environment :: Web Environment',
-    'Framework :: Sphinx :: Extension',
-    'Intended Audience :: Developers',
-    'Operating System :: OS Independent',
-    'Programming Language :: Python',
-    'Programming Language :: Python :: 3',
-    'Programming Language :: Python :: 3.12',
-    'Programming Language :: Python :: 3.13',
-    'Topic :: Documentation',
-    'Topic :: Documentation :: Sphinx',
-    'Topic :: Software Development :: Documentation',
-    'Typing :: Typed',
-]
-authors = [{name = "Stéphane Brunner",email = "stephane.brunner@gmail.com"}]
-requires-python = ">=3.12"
-dependencies = ["Sphinx", "pygments", "docutils", "idna", "urllib3", "certifi", "jinja2", "requests>=2.32.4"]
-
-[project.urls]
-repository = "https://github.com/sbrunner/sphinx-prompt"
-"Bug Tracker" = "https://github.com/sbrunner/sphinx-prompt/issues"
-
-[build-system]
-requires = ["poetry-core>=1.0.0", "poetry-dynamic-versioning"]
-build-backend = "poetry.core.masonry.api"
