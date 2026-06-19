@@ -68,7 +68,7 @@ pygments = "2.20.0"
 docutils = "0.22.4"
 idna = "3.16"
 urllib3 = "2.7.0"
-certifi = "2026.5.20"
+certifi = "2026.6.17"
 jinja2 = "3.1.6"
 
 [tool.poetry.group.dev.dependencies]
