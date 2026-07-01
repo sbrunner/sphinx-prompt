@@ -65,7 +65,7 @@ packages = [
 python = ">=3.12,<4.0"
 Sphinx = "9.1.0"
 pygments = "2.20.0"
-docutils = "0.23"
+docutils = "0.22.4"
 idna = "3.18"
 urllib3 = "2.7.0"
 certifi = "2026.6.17"
