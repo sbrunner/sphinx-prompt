@@ -1,3 +1,5 @@
+# Copyright (c) 2013-2026, Stéphane Brunner
+
 from io import StringIO
 
 import docutils.statemachine
