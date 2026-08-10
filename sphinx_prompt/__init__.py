@@ -1,5 +1,7 @@
 #!/usr/bin/python
 
+# Copyright (c) 2026, Stéphane Brunner
+
 from typing import Any, ClassVar
 
 import sphinx.application
