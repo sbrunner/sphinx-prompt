@@ -31,7 +31,7 @@ Sphinx = "9.1.0"
 pygments = "2.20.0"
 docutils = "0.22.4"
 idna = "3.16"
-urllib3 = "2.7.0"
+urllib3 = "2.8.0"
 certifi = "2026.7.22"
 jinja2 = "3.1.6"
 
