@@ -3,7 +3,7 @@ pre-commit==4.6.2
 poetry-plugin-export==1.10.1
 importlib-metadata<9.0.2
 setuptools>=65.5.1 # not directly required, pinned by Snyk to avoid a vulnerability
-certifi>=2024.7.4 # not directly required, pinned by Snyk to avoid a vulnerability
+certifi>=2026.10.19 # not directly required, pinned by Snyk to avoid a vulnerability
 zipp>=3.19.1 # not directly required, pinned by Snyk to avoid a vulnerability
 tag-publish==1.2.6
 requests>=2.33.0 # not directly required, pinned by Snyk to avoid a vulnerability
