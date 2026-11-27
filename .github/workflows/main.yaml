@@ -10,11 +10,11 @@ on:
   pull_request:
 
 permissions:
-  contents: write
-  id-token: write
+  contents: read
 
 env:
-  HAS_SECRETS: ${{ secrets.HAS_SECRETS }}
+  POETRY_INSTALLER_ONLY_BINARY: 'true'
+  POETRY_INSTALLER_NO_BINARY: markdown-table,pylint-celery
   PYTHON_KEYRING_BACKEND: keyring.backends.null.Keyring
 
 jobs:
@@ -24,15 +24,17 @@ jobs:
     timeout-minutes: 15
     if: "!startsWith(github.event.head_commit.message, '[skip ci] ')"
 
+    outputs:
+      success: ${{ steps.success.outputs.success }}
+
     steps:
       - run: docker system prune --all --force
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - run: cp --recursive sphinx{_,-}prompt
 
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
         with:
           python-version: '3.13'
-      - run: python3 -m pip install --requirement=ci/requirements.txt
+      - run: python3 -m pip install '--only-binary=:all:' --requirement=ci/requirements.txt
 
       - uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
         with:
@@ -57,22 +59,53 @@ jobs:
         env:
           GITHUB_EVENT: ${{ toJson(github) }}
 
-      - run: python3 -m pip install --requirement=requirements.txt
+      - run: python3 -m pip install '--only-binary=:all:' --requirement=requirements.txt
       - run: poetry install
       - run: poetry run pytest
       - run: poetry run prospector --output=pylint sphinx_prompt
 
-      - name: Init pypi
-        run: |-
-          echo "[pypi]" > ~/.pypirc
-          echo "username = ${{ secrets.PYPI_USERNAME }}" >> ~/.pypirc
-          echo "password = ${{ secrets.PYPI_PASSWORD }}" >> ~/.pypirc
-        if: env.HAS_SECRETS == 'HAS_SECRETS'
+      # Mark as success
+      - id: success
+        run: echo "success=true" >> $GITHUB_OUTPUT
+
+  publish:
+    name: Publish
+    runs-on: ubuntu-26.04
+    timeout-minutes: 15
+    needs:
+      - build
+    if: always()
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - run: '[[ "${{ needs.build.outputs.success }}" == "true" ]]'
+
+      # The full history is required to compute the version from the tags.
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+
+      # Provides the pip, python3 and poetry that tag-publish calls to build the wheel.
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7.1.0
+        with:
+          python-version: '3.13'
+      - run: python3 -m pip install '--only-binary=:all:' --requirement=ci/requirements.txt
+
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
+        with:
+          version: latest-known
+          cache-python: true
+          python-version: '3.13'
+
+      # tag-publish logs in to PyPI by itself with the OpenId Connect token, and only when the context publishes.
       - name: Publish
-        run: tag-publish
+        run: uv run --locked --isolated --no-build --project=.github/publish tag-publish
         env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - run: git diff --exit-code --patch > /tmp/dpkg-versions.patch; git diff --color; git reset --hard || true
         if: failure()
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
