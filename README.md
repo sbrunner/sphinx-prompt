@@ -2,7 +2,7 @@
 
 ## Initialize
 
-In `conf.py` add `extensions += ['sphinx_prompt']`.
+In `conf.py` add `extensions += ['sphinx-prompt']`.
 
 ## Syntax
 
